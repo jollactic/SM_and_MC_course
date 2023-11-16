@@ -32,7 +32,7 @@ $$
 $$
 
 Here:
-- $$epsilon$) is the energy associated with placing a particle on a lattice site.
+- $\epsilon$ is the energy associated with placing a particle on a lattice site.
 - $n_i$ is a binary variable equal to 1 if a particle occupies site $i$ and 0 otherwise.
 - The sum is taken over all lattice sites.
 
