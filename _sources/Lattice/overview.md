@@ -1,7 +1,6 @@
-# Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling
+# Lattice models
 
-## Lattice models
-The cluster expansion technique makes use of an lattice representation of our system.
+## lattice
 
 In three dimensions, a lattice can be defined as a regular arrangement of points in three-dimensional space, where each point has identical surroundings and the arrangement repeats itself periodically in all directions. More formally, a lattice in three dimensions can be defined as a set of points of the form $\vec{r} = n_1\vec{a}_1 + n_2\vec{a}_2 + n_3\vec{a}_3$, where $\vec{a}_1$, $\vec{a}_2$, and $\vec{a}_3$ are three linearly independent vectors called the lattice vectors, and $n_1$, $n_2$, and $n_3$ are integers.
 
@@ -14,135 +13,242 @@ The figure illustrates a 2d lattice with the unit cell marker out.
 
 There are many types of lattices in three dimensions, each with different symmetry properties. Some common examples include the simple cubic lattice, the face-centered cubic lattice, and the body-centered cubic lattice. The simple cubic lattice is the most basic type of lattice, where each lattice point is at the corner of a cube. The face-centered cubic lattice has additional lattice points at the center of each face of the cube, while the body-centered cubic lattice has an additional lattice point at the center of the cube.
 
-## Cluster expansion (CE)
-The cluster expansion method is a computational technique used to model the energetics of alloys. It is based on the idea that the total energy of an alloy can be written as a sum of the energies of individual clusters, or groups of atoms, within the alloy.
-In this method we use lattice representaion of our system. The cluster expansion method is typically used to calculate the configurational entropy and to predict the stable structures of alloys.
+## Ideal Lattice Gas
 
-In mathematical terms, the total energy of a alloy configuration, $n$, can be represented as:
+The ideal lattice gas model is a simplified representation of a gas system in statistical mechanics. It provides a theoretical framework for studying the behavior of non-interacting particles in a lattice structure. This model serves as a fundamental reference for understanding the properties of real gases under certain conditions.
 
-$$
-\\
-E_n = \sum_{i} c_{i,n}\Delta E_{i}
-\\
-$$
+### Introduction
 
-where $E_n$ is the total energy of the alloy configuration, $\Delta E_{i}$ is the energy of the $i$th cluster (the cluster coefficient), and $c_{i,n}$ is the concentration of the $i$th cluster within the alloy configuration.
+In the ideal lattice gas model, the system is often conceptualized as a lattice, where each lattice site can be occupied by at most one particle. This model assumes non-interacting particles, neglecting any potential interactions between them. The simplicity of the ideal lattice gas makes it a useful starting point for studying the basic principles of statistical mechanics.
 
-As an example we can consider a 2-dimensional alloy where each lattice point is occupied with either a black or white atom (These could be two metals e.g. Ag and Pt). If we use a 5$\times$5 lattice to represent our system we have 25 lattice site and the possiblity of forming 2$^{25}=33'554'432$ unique alloy configurations. The figure below show one example of such configuration and illustrates how the CE approach can be use to determine it's energy.
+### Hamiltonian and Energy
 
-![PBC](CE.gif)
-***Figure.*** *Example showing how the energy of a 2-dimensional alloy is computed using a cluster expansion model. The model has three clusters, a horizontal dimer with energy $\Delta E_{1}=0.1$, a vertical dimer with energy $\Delta E_{2}=0.2$, and trimer with energy $\Delta E_{3}=-0.1$. In the animation cluster blue when they can be fitted at a certain position in the lattice.*
+The Hamiltonian for the ideal lattice gas model is straightforward, capturing the energy associated with placing particles on the lattice sites. It is expressed as:
 
-A cluster expansion model is typically parametrized using Density Functional Theory (DFT) data. In order to do so we calculate the total energies for several *simple* alloy configurations (using small enough supercells that we can afford to perform the time consuming DFT calculations). We need at least as many such configurations as the number of clusters included in our expansion if we like to determine all cluster coefficients. It is straight-forward to re-write the equation above into matrix from: 
+\[ H = -\epsilon \sum_{i} n_i \]
 
-$$
-\begin{bmatrix}
-E_{1} \\
-E_{2} \\
-\vdots \\
-E_{n}
-\end{bmatrix}
-= 
-\begin{bmatrix}
-c_{1,1} & c_{1,2} & \cdots & c_{1,m} \\
-c_{2,1} & c_{2,2} & \cdots & c_{2,m} \\
-\vdots & \vdots & \ddots & \vdots \\
-c_{n,1} & c_{n,2} & \cdots & c_{n,m}
-\end{bmatrix}
-\begin{bmatrix}
-\Delta E_{1} \\
-\Delta E_{2} \\
-\vdots \\
-\Delta E_{m}
-\end{bmatrix}
-$$
+Here:
+- \(\epsilon\) is the energy associated with placing a particle on a lattice site.
+- \(n_i\) is a binary variable equal to 1 if a particle occupies site \(i\) and 0 otherwise.
+- The sum is taken over all lattice sites.
 
-The cluster coefficients, $\Delta E_{i}$, can then be obtained from a *least-squares fit*. In practice we often apply regularization to obtain a more robust fit and to avoid problem with so-called overfitting. Once we have parametrized our model we can consider larger and more complex situations.  
+### Partition Function
 
-The cluster expansion method relies on two key assumptions. The first assumption is that the energetics of an alloy can be accurately described by considering only short-range interactions between atoms. The second assumption is that the energy of a cluster can be calculated as a sum of the energies of its constituent atoms, plus a term that accounts for the interactions between the atoms within the cluster.
+The partition function (\(Z\)) for the ideal lattice gas is derived from the Hamiltonian and represents the sum of all possible configurations:
 
-The cluster expansion method is a powerful tool for predicting the properties of alloys, particularly in cases where experimental data is limited. However, it requires accurate knowledge of the energetics of individual clusters, which can be difficult to obtain. Additionally, the cluster expansion method is limited to systems in which the interactions between atoms can be accurately described by short-range potentials.
+\[ Z = \sum_{\text{all configurations}} e^{-\beta H} \]
 
+Here:
+- \(\beta = \frac{1}{k_B T}\) is the inverse temperature, where \(k_B\) is the Boltzmann constant and \(T\) is the absolute temperature.
 
-## Convex hull and phase-diagrams
-Cluster expansions and convex hull can be used together to construct a simple phase diagram for a given alloy system. The basic idea is to use the cluster expansion to calculate the energies of different configurations of the alloy, and then use the convex hull construction to identify the lowest-energy configurations, or phases, at a given composition.
+### Free Energy
 
-The convex hull construction is a geometric method that can be used to identify the most stable phases at a given composition, based on the calculated energies of different configurations. The method involves plotting the energies of all possible configurations of the alloy as a function of their compositions, and then drawing a convex hull around the lowest-energy configurations. The points on the convex hull correspond to the most stable phases at the given composition, and the lines connecting these points represent phase boundaries.
+The Helmholtz free energy (\(F\)) is obtained from the partition function:
 
-To construct a simple phase diagram using these methods, one can follow these steps:
+\[ F = -k_B T \ln Z \]
 
-1. Calculate the energies of different configurations of the alloy using the cluster expansion method.
+### Internal Energy and Specific Heat
 
-2. Use the convex hull construction to identify the lowest-energy configurations, or phases, at a given composition.
+The internal energy (\(U\)) and specific heat (\(C_V\)) can be derived from the free energy:
 
-3. Plot the energies of all possible configurations of the alloy as a function of their compositions.
+\[ U = -\frac{\partial \ln Z}{\partial \beta} \quad \text{and} \quad C_V = \frac{\partial U}{\partial T} \]
 
-4. Draw a convex hull around the lowest-energy configurations, and identify the points on the hull as the most stable phases at the given composition.
+### Entropy
 
-Connect the points on the convex hull with lines to represent the phase boundaries.
+The entropy (\(S\)) is given by:
 
-The resulting phase diagram shows the stable phases of the alloy at different compositions, and the transitions between them. This can be useful in predicting the behavior of the alloy under different conditions, such as changes in temperature or pressure. However, if we only consider total energies of static structures we are neglecting to role of configurational dissorder in the system. For a given composition we may have many configruations with similar energies. The system is therefor typically better represented by a weighted average (from the Boltzmann distribution) over all these configuration, a so-called ensamble average. 
+\[ S = \frac{\epsilon}{T} \frac{\partial \ln Z}{\partial \epsilon} + k_B \sum_{i} \left[ p_i \ln p_i + (1 - p_i) \ln (1 - p_i) \right] \]
 
-From the simple example above we realise that it will be unfeasible in the general case to compute the energy of all configurations, there is simply too many of them. Here, Monte-Carlo simulations can be used to rigoursly compute such ensemble averages without having to evaluate all these energies.
+Here:
+- \(p_i\) is the probability of finding a particle at site \(i\).
 
-![Convex Hull](ASE_Hull.png)
+### Particle Density
 
-***Figure.*** *An example of a convex hull for a Cu-Pt alloy system. The solid blue line is convex hull and all point on it correspond to stable compositions (marked with formulas). Points above the hull are unstable. ([The figure is taken from the atomic simulations environment wiki page](https://wiki.fysik.dtu.dk/ase/tutorials/ga/ga_convex_hull.html).)*
+The particle density (\(n\)) is given by the average number of particles per lattice site:
 
-## Metropolis Monte-Carlo (MC)
+\[ n = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \epsilon} \]
 
-The Metropolis Monte Carlo simulation technique is a powerful computational method used to simulate the thermodynamcs of dissordered systems in condensed matter physics, chemistry, and materials science.
+### Ideal Gas Law
 
-The Metropolis Monte Carlo simulation technique works by randomly proposing new configurations of the system, and accepting or rejecting them based on their energy difference relative to the current configuration. The probability of accepting a new configuration is determined by the Metropolis criterion, which ensures that the simulation samples the correct thermodynamic ensemble (it complies with the Boltzmann distribution).
+In the limit of low particle density, the ideal lattice gas model converges to the ideal gas law:
 
-The Metropolis criterion states that the probability of accepting a new configuration with energy difference $\Delta E$ is given by:
+\[ PV = Nk_B T \]
 
-$$
-\\
-P(\Delta E) = min  \{ e^{-\Delta E/k_BT}, 1  \}
-\\
-$$
-
-where $k_B$ is the Boltzmann constant, $T$ is the temperature, and $\Delta E$ is the energy difference between the proposed  configuration and the current configuration. This means that, if the propsoed configuration has a lower energy it is always accepted. 
+Here:
+- \(P\) is the pressure.
+- \(V\) is the volume.
+- \(N\) is the total number of particles.
 
 
-In practice, the Metropolis Monte Carlo simulation technique involves the following steps:
 
-1. Choose a starting configuration for the system.
+## Interacting Lattice Gas with Nearest-Neighbor Interactions
 
-2. Randomly propose a new configuration by moving one or more atoms or molecules in the system.
+In the context of statistical mechanics, an interacting lattice gas refers to a model where particles on a lattice experience interactions, specifically nearest-neighbor interactions. The energy associated with these interactions is denoted as \(w\).
 
-3. Calculate the energy difference between the proposed configuration and the current configuration.
+### Hamiltonian and Energy
 
-4. Determine whether to accept or reject the proposed configuration based on the Metropolis criterion.
+The Hamiltonian for an interacting lattice gas is extended to include the interaction energy \(w\) between nearest neighbors. It is expressed as:
 
-5. Record/save the current configuration into a data-base. *Note that the same configurations can be added twice or more when we reject proposed configurations. This is a key-point of the approach, low energy configuration shall be mre predominant in our data-base.* 
+\[ H = -\epsilon \sum_{i} n_i - w \sum_{\langle i,j \rangle} n_i n_j \]
 
-6. Repeat steps 2-4 for a large number $N$ of iterations , allowing the simulation to explore the configuration space of the system.
+Here:
+- \(\epsilon\) is the energy associated with placing a particle on a lattice site.
+- \(n_i\) is a binary variable equal to 1 if a particle occupies site \(i\) and 0 otherwise.
+- \(w\) is the interaction energy between nearest neighbors.
+- \(\langle i, j \rangle\) denotes summation over nearest neighbors.
 
-From the data-base generated in this procedure, we can calculate thermodynamic properties of the system, such as the heat capacity and free energy. In order to do so we simply take the average of the property calculated using all configurations in our data-base. For example the internal energy, $<U>$, can be calculated as follows:
+### Partition Function
+
+The partition function (\(Z\)) for the interacting lattice gas is derived from the Hamiltonian:
+
+\[ Z = \sum_{\text{all configurations}} e^{-\beta H} \]
+
+Here:
+- \(\beta = \frac{1}{k_B T}\) is the inverse temperature, where \(k_B\) is the Boltzmann constant and \(T\) is the absolute temperature.
+
+### Free Energy
+
+The Helmholtz free energy (\(F\)) is obtained from the partition function:
+
+\[ F = -k_B T \ln Z \]
+
+### Internal Energy and Specific Heat
+
+The internal energy (\(U\)) and specific heat (\(C_V\)) can be derived from the free energy:
+
+\[ U = -\frac{\partial \ln Z}{\partial \beta} \quad \text{and} \quad C_V = \frac{\partial U}{\partial T} \]
+
+### Entropy
+
+The entropy (\(S\)) is given by:
+
+\[ S = \frac{\epsilon}{T} \frac{\partial \ln Z}{\partial \epsilon} + k_B \sum_{i} \left[ p_i \ln p_i + (1 - p_i) \ln (1 - p_i) \right] \]
+
+Here:
+- \(p_i\) is the probability of finding a particle at site \(i\).
+
+### Particle Density
+
+The particle density (\(n\)) is given by the average number of particles per lattice site:
+
+\[ n = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \epsilon} \]
 
 
-$$
-\\
-<U> = \frac{1}{N} \sum_{n}^{N} E_i
-\\
-$$
 
-where $N$ is the number of configurations in our data-base, and $E_n$ is the energy of configuration $n$. The concept can be generalized to any property that can be computed for the single configurations (so-called mechanical properties). 
 
-$$
-\\
-<A> = \frac{1}{N} \sum_{n}^{N} A_n
-\\
-$$
 
-[The concept os this type of sampling is neatly illustrated in this interactive example](https://chi-feng.github.io/mcmc-demo/app.html?algorithm=RandomWalkMH&target=banana).
 
-## Combining CE and MC
-The combination of cluster expansion and Monte Carlo simulations can be used to study a wide range of properties of alloys, such as phase stability, order-disorder transitions, and defects such as vacancies or interstitials. It also a very powerful technique to simulate Li intercalation on cathode and anonde materials in the context of batteries (see e.g. [Ref.](https://iopscience.iop.org/article/10.1088/1361-648X/ab1bbc))
 
- The method can also be used to construct a phase diagram that shows the stable phases of the alloy as a function of temperature and composition.
+# Lattice Theory of Solutions
+
+The lattice theory of solutions is a theoretical framework within statistical mechanics that provides a systematic approach to understanding the thermodynamic properties of solutions, particularly in the context of phase transitions and mixing behavior. This theory is particularly useful in describing idealized solutions and predicting their macroscopic properties.
+
+## Introduction
+
+In the lattice theory of solutions, the system is often represented as a lattice, where each lattice site can be occupied by a molecule or particle. This approach simplifies the complex interactions in a solution, making it a valuable tool for studying the thermodynamics of mixtures.
+
+## Lattice Model Formulation
+
+### Hamiltonian and Energy
+
+The starting point is the formulation of a Hamiltonian that describes the energy of the system based on the interactions between neighboring lattice sites. For a binary solution, the energy of the system (\(E\)) can be expressed as:
+
+\[ E = -J \sum_{\langle i,j \rangle} \delta_{\sigma_i, \sigma_j} \]
+
+Here:
+- \(J\) is the interaction parameter.
+- \(\langle i,j \rangle\) denotes summation over nearest neighbors.
+- \(\delta_{\sigma_i, \sigma_j}\) is the Kronecker delta function, equal to 1 if \(\sigma_i = \sigma_j\) and 0 otherwise.
+
+### Entropy
+
+The entropy (\(S\)) is introduced to account for the mixing of particles in the solution. Assuming ideal mixing, the entropy is given by the well-known expression:
+
+\[ S = -k_B \sum_{i} \left[p_i \ln p_i + (1 - p_i) \ln (1 - p_i)\right] \]
+
+Here:
+- \(k_B\) is the Boltzmann constant.
+- \(p_i\) is the probability of finding a particle of type \(i\) at a lattice site.
+
+## Thermodynamic Properties
+
+### Free Energy
+
+The Helmholtz free energy (\(F\)) is derived by combining the energy and entropy terms:
+
+\[ F = E - TS \]
+
+### Phase Transitions
+
+By analyzing the free energy, the lattice theory of solutions predicts phase transitions in the system. For instance, in a binary solution, the model can describe demixing or phase separation as a function of temperature and composition.
+
+## Limitations and Extensions
+
+While the lattice theory of solutions provides valuable insights into the thermodynamics of idealized solutions, it has limitations in capturing real-world complexities, such as non-ideal mixing and interactions. Extensions, including mean-field theories and more sophisticated models, aim to address these limitations for a more accurate description of complex solutions.
+
+## Applications
+
+The lattice theory of solutions finds applications in various fields, including chemistry, physics, and materials science. It is particularly useful for predicting phase diagrams, studying phase transitions, and gaining a fundamental understanding of the thermodynamic behavior of solutions.
+
+## Conclusion
+
+The lattice theory of solutions offers a structured and mathematical approach to study the thermodynamics of solutions, providing a foundation for understanding phase transitions and mixing behavior. While it serves as a valuable theoretical tool for idealized scenarios, researchers often combine this approach with experimental data and more advanced theoretical models to capture the complexities of real-world solutions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## The Ising Model
+
+The Ising model, named after physicist Ernst Ising, stands as a foundational concept in statistical mechanics, offering valuable insights into phase transitions and magnetic properties in materials. This mathematical model simplifies the intricate interactions within a system, making it particularly applicable in the exploration of ferromagnetism.
+
+### Overview
+The two-dimensional Ising model is a simplified representation of a magnetic material where each magnetic moment (spin) interacts only with its nearest neighbors. The system's elements, often representing magnetic moments, are assigned binary spins – typically up or down. These spins interact primarily with their nearest neighbors, influencing each other's orientation. The model's behavior is described by the following simple Hamiltonian:
+
+\[ H = -J \sum_{\langle i,j \rangle} s_i s_j - h \sum_{i} s_i \]
+
+Here:
+- \(J\) represents the strength of interactions between spins.
+- \(s_i\) is the spin at site \(i\).
+- \(\langle i,j \rangle\) denotes summation over nearest neighbors.
+- \(h\) is an external magnetic field.
+
+
+A defining feature of the Ising model is its ability to exhibit phase transitions. In particular, it undergoes a ferromagnetic transition where spins align, leading to the material becoming magnetized. This critical behavior is pivotal for understanding the emergence of macroscopic properties in various physical systems. The Ising model finds widespread applications in physics and material science. It serves as a crucial tool for studying critical phenomena and phase transitions. In material science, the model aids in comprehending magnetic properties in diverse materials, providing a bridge between microscopic interactions and macroscopic behaviors.
+
+
+## Onsager's Connection to the Ising Model
+
+Lars Onsager, a distinguished theoretical physicist, made a groundbreaking contribution to statistical mechanics by providing an exact solution for the two-dimensional Ising model in 1944. Onsager's solution was a significant breakthrough, as solving the Ising model exactly had proven to be a formidable mathematical challenge.
+
+### Key Contributions
+
+1. **Partition Function:**
+   - Onsager derived a closed-form expression for the partition function of the two-dimensional Ising model, encapsulating the statistical properties of the system.
+
+2. **Critical Temperature:**
+   - Determined the critical temperature for the phase transition in the two-dimensional Ising model, where the material undergoes a transition from a disordered to an ordered state, exhibiting spontaneous magnetization.
+
+3. **Magnetization Profile:**
+   - Provided insights into the behavior of magnetization as a function of temperature, shedding light on the nature of the phase transition.
+
+
+
 
 ### Tutorial
 

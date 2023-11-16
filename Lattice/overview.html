@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling &#8212; Statistical Mechanics and Monte-Carlo</title>
+    <title>Lattice models &#8212; Statistical Mechanics and Monte-Carlo</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -119,7 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling
+   Lattice models
   </a>
  </li>
  <li class="toctree-l1">
@@ -363,40 +363,194 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lattice-models">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
    Lattice models
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cluster-expansion-ce">
-   Cluster expansion (CE)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convex-hull-and-phase-diagrams">
-   Convex hull and phase-diagrams
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metropolis-monte-carlo-mc">
-   Metropolis Monte-Carlo (MC)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#combining-ce-and-mc">
-   Combining CE and MC
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tutorial">
-     Tutorial
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lattice">
+     lattice
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#further-reading">
-     Further reading:
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ideal-lattice-gas">
+     Ideal Lattice Gas
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#introduction">
+       Introduction
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hamiltonian-and-energy">
+       Hamiltonian and Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#partition-function">
+       Partition Function
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#free-energy">
+       Free Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#internal-energy-and-specific-heat">
+       Internal Energy and Specific Heat
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#entropy">
+       Entropy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#particle-density">
+       Particle Density
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ideal-gas-law">
+       Ideal Gas Law
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interacting-lattice-gas-with-nearest-neighbor-interactions">
+     Interacting Lattice Gas with Nearest-Neighbor Interactions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Hamiltonian and Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Partition Function
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Free Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Internal Energy and Specific Heat
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Entropy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Particle Density
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lattice-theory-of-solutions">
+   Lattice Theory of Solutions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Introduction
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lattice-model-formulation">
+     Lattice Model Formulation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       Hamiltonian and Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       Entropy
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#thermodynamic-properties">
+     Thermodynamic Properties
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       Free Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#phase-transitions">
+       Phase Transitions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limitations-and-extensions">
+     Limitations and Extensions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applications">
+     Applications
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-ising-model">
+     The Ising Model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#overview">
+       Overview
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#onsagers-connection-to-the-ising-model">
+     Onsager’s Connection to the Ising Model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#key-contributions">
+       Key Contributions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tutorial">
+       Tutorial
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#further-reading">
+       Further reading:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -409,7 +563,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling</h1>
+                <h1>Lattice models</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -419,40 +573,194 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lattice-models">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
    Lattice models
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cluster-expansion-ce">
-   Cluster expansion (CE)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#convex-hull-and-phase-diagrams">
-   Convex hull and phase-diagrams
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metropolis-monte-carlo-mc">
-   Metropolis Monte-Carlo (MC)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#combining-ce-and-mc">
-   Combining CE and MC
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tutorial">
-     Tutorial
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lattice">
+     lattice
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#further-reading">
-     Further reading:
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ideal-lattice-gas">
+     Ideal Lattice Gas
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#introduction">
+       Introduction
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hamiltonian-and-energy">
+       Hamiltonian and Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#partition-function">
+       Partition Function
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#free-energy">
+       Free Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#internal-energy-and-specific-heat">
+       Internal Energy and Specific Heat
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#entropy">
+       Entropy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#particle-density">
+       Particle Density
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ideal-gas-law">
+       Ideal Gas Law
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interacting-lattice-gas-with-nearest-neighbor-interactions">
+     Interacting Lattice Gas with Nearest-Neighbor Interactions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Hamiltonian and Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Partition Function
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Free Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Internal Energy and Specific Heat
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Entropy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Particle Density
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lattice-theory-of-solutions">
+   Lattice Theory of Solutions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Introduction
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lattice-model-formulation">
+     Lattice Model Formulation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       Hamiltonian and Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       Entropy
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#thermodynamic-properties">
+     Thermodynamic Properties
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       Free Energy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#phase-transitions">
+       Phase Transitions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limitations-and-extensions">
+     Limitations and Extensions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applications">
+     Applications
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-ising-model">
+     The Ising Model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#overview">
+       Overview
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#onsagers-connection-to-the-ising-model">
+     Onsager’s Connection to the Ising Model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#key-contributions">
+       Key Contributions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tutorial">
+       Tutorial
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#further-reading">
+       Further reading:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -466,117 +774,224 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="dealing-with-dissordered-structures-cluster-expansion-and-monte-carlo-sampling">
-<h1>Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling<a class="headerlink" href="#dealing-with-dissordered-structures-cluster-expansion-and-monte-carlo-sampling" title="Permalink to this headline">#</a></h1>
-<section id="lattice-models">
-<h2>Lattice models<a class="headerlink" href="#lattice-models" title="Permalink to this headline">#</a></h2>
-<p>The cluster expansion technique makes use of an lattice representation of our system.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="lattice-models">
+<h1>Lattice models<a class="headerlink" href="#lattice-models" title="Permalink to this headline">#</a></h1>
+<section id="lattice">
+<h2>lattice<a class="headerlink" href="#lattice" title="Permalink to this headline">#</a></h2>
 <p>In three dimensions, a lattice can be defined as a regular arrangement of points in three-dimensional space, where each point has identical surroundings and the arrangement repeats itself periodically in all directions. More formally, a lattice in three dimensions can be defined as a set of points of the form <span class="math notranslate nohighlight">\(\vec{r} = n_1\vec{a}_1 + n_2\vec{a}_2 + n_3\vec{a}_3\)</span>, where <span class="math notranslate nohighlight">\(\vec{a}_1\)</span>, <span class="math notranslate nohighlight">\(\vec{a}_2\)</span>, and <span class="math notranslate nohighlight">\(\vec{a}_3\)</span> are three linearly independent vectors called the lattice vectors, and <span class="math notranslate nohighlight">\(n_1\)</span>, <span class="math notranslate nohighlight">\(n_2\)</span>, and <span class="math notranslate nohighlight">\(n_3\)</span> are integers.</p>
 <p>The lattice vectors <span class="math notranslate nohighlight">\(\vec{a}_1\)</span>, <span class="math notranslate nohighlight">\(\vec{a}_2\)</span>, and <span class="math notranslate nohighlight">\(\vec{a}_3\)</span> are chosen such that they form a parallelepiped that contains all the lattice points. This parallelepiped is called the unit cell of the lattice, and it represents the repeating pattern of the lattice.</p>
 <p><img alt="Lattice" src="../_images/lattice1.png" /></p>
 <p>The figure illustrates a 2d lattice with the unit cell marker out.</p>
 <p>There are many types of lattices in three dimensions, each with different symmetry properties. Some common examples include the simple cubic lattice, the face-centered cubic lattice, and the body-centered cubic lattice. The simple cubic lattice is the most basic type of lattice, where each lattice point is at the corner of a cube. The face-centered cubic lattice has additional lattice points at the center of each face of the cube, while the body-centered cubic lattice has an additional lattice point at the center of the cube.</p>
 </section>
-<section id="cluster-expansion-ce">
-<h2>Cluster expansion (CE)<a class="headerlink" href="#cluster-expansion-ce" title="Permalink to this headline">#</a></h2>
-<p>The cluster expansion method is a computational technique used to model the energetics of alloys. It is based on the idea that the total energy of an alloy can be written as a sum of the energies of individual clusters, or groups of atoms, within the alloy.
-In this method we use lattice representaion of our system. The cluster expansion method is typically used to calculate the configurational entropy and to predict the stable structures of alloys.</p>
-<p>In mathematical terms, the total energy of a alloy configuration, <span class="math notranslate nohighlight">\(n\)</span>, can be represented as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\\
-E_n = \sum_{i} c_{i,n}\Delta E_{i}
-\\
-\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(E_n\)</span> is the total energy of the alloy configuration, <span class="math notranslate nohighlight">\(\Delta E_{i}\)</span> is the energy of the <span class="math notranslate nohighlight">\(i\)</span>th cluster (the cluster coefficient), and <span class="math notranslate nohighlight">\(c_{i,n}\)</span> is the concentration of the <span class="math notranslate nohighlight">\(i\)</span>th cluster within the alloy configuration.</p>
-<p>As an example we can consider a 2-dimensional alloy where each lattice point is occupied with either a black or white atom (These could be two metals e.g. Ag and Pt). If we use a 5<span class="math notranslate nohighlight">\(\times\)</span>5 lattice to represent our system we have 25 lattice site and the possiblity of forming 2<span class="math notranslate nohighlight">\(^{25}=33'554'432\)</span> unique alloy configurations. The figure below show one example of such configuration and illustrates how the CE approach can be use to determine it’s energy.</p>
-<p><img alt="PBC" src="../_images/CE1.gif" />
-<em><strong>Figure.</strong></em> <em>Example showing how the energy of a 2-dimensional alloy is computed using a cluster expansion model. The model has three clusters, a horizontal dimer with energy <span class="math notranslate nohighlight">\(\Delta E_{1}=0.1\)</span>, a vertical dimer with energy <span class="math notranslate nohighlight">\(\Delta E_{2}=0.2\)</span>, and trimer with energy <span class="math notranslate nohighlight">\(\Delta E_{3}=-0.1\)</span>. In the animation cluster blue when they can be fitted at a certain position in the lattice.</em></p>
-<p>A cluster expansion model is typically parametrized using Density Functional Theory (DFT) data. In order to do so we calculate the total energies for several <em>simple</em> alloy configurations (using small enough supercells that we can afford to perform the time consuming DFT calculations). We need at least as many such configurations as the number of clusters included in our expansion if we like to determine all cluster coefficients. It is straight-forward to re-write the equation above into matrix from:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}
-E_{1} \\
-E_{2} \\
-\vdots \\
-E_{n}
-\end{bmatrix}
-= 
-\begin{bmatrix}
-c_{1,1} &amp; c_{1,2} &amp; \cdots &amp; c_{1,m} \\
-c_{2,1} &amp; c_{2,2} &amp; \cdots &amp; c_{2,m} \\
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-c_{n,1} &amp; c_{n,2} &amp; \cdots &amp; c_{n,m}
-\end{bmatrix}
-\begin{bmatrix}
-\Delta E_{1} \\
-\Delta E_{2} \\
-\vdots \\
-\Delta E_{m}
-\end{bmatrix}
-\end{split}\]</div>
-<p>The cluster coefficients, <span class="math notranslate nohighlight">\(\Delta E_{i}\)</span>, can then be obtained from a <em>least-squares fit</em>. In practice we often apply regularization to obtain a more robust fit and to avoid problem with so-called overfitting. Once we have parametrized our model we can consider larger and more complex situations.</p>
-<p>The cluster expansion method relies on two key assumptions. The first assumption is that the energetics of an alloy can be accurately described by considering only short-range interactions between atoms. The second assumption is that the energy of a cluster can be calculated as a sum of the energies of its constituent atoms, plus a term that accounts for the interactions between the atoms within the cluster.</p>
-<p>The cluster expansion method is a powerful tool for predicting the properties of alloys, particularly in cases where experimental data is limited. However, it requires accurate knowledge of the energetics of individual clusters, which can be difficult to obtain. Additionally, the cluster expansion method is limited to systems in which the interactions between atoms can be accurately described by short-range potentials.</p>
+<section id="ideal-lattice-gas">
+<h2>Ideal Lattice Gas<a class="headerlink" href="#ideal-lattice-gas" title="Permalink to this headline">#</a></h2>
+<p>The ideal lattice gas model is a simplified representation of a gas system in statistical mechanics. It provides a theoretical framework for studying the behavior of non-interacting particles in a lattice structure. This model serves as a fundamental reference for understanding the properties of real gases under certain conditions.</p>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h3>
+<p>In the ideal lattice gas model, the system is often conceptualized as a lattice, where each lattice site can be occupied by at most one particle. This model assumes non-interacting particles, neglecting any potential interactions between them. The simplicity of the ideal lattice gas makes it a useful starting point for studying the basic principles of statistical mechanics.</p>
 </section>
-<section id="convex-hull-and-phase-diagrams">
-<h2>Convex hull and phase-diagrams<a class="headerlink" href="#convex-hull-and-phase-diagrams" title="Permalink to this headline">#</a></h2>
-<p>Cluster expansions and convex hull can be used together to construct a simple phase diagram for a given alloy system. The basic idea is to use the cluster expansion to calculate the energies of different configurations of the alloy, and then use the convex hull construction to identify the lowest-energy configurations, or phases, at a given composition.</p>
-<p>The convex hull construction is a geometric method that can be used to identify the most stable phases at a given composition, based on the calculated energies of different configurations. The method involves plotting the energies of all possible configurations of the alloy as a function of their compositions, and then drawing a convex hull around the lowest-energy configurations. The points on the convex hull correspond to the most stable phases at the given composition, and the lines connecting these points represent phase boundaries.</p>
-<p>To construct a simple phase diagram using these methods, one can follow these steps:</p>
+<section id="hamiltonian-and-energy">
+<h3>Hamiltonian and Energy<a class="headerlink" href="#hamiltonian-and-energy" title="Permalink to this headline">#</a></h3>
+<p>The Hamiltonian for the ideal lattice gas model is straightforward, capturing the energy associated with placing particles on the lattice sites. It is expressed as:</p>
+<p>[ H = -\epsilon \sum_{i} n_i ]</p>
+<p>Here:</p>
+<ul class="simple">
+<li><p>(\epsilon) is the energy associated with placing a particle on a lattice site.</p></li>
+<li><p>(n_i) is a binary variable equal to 1 if a particle occupies site (i) and 0 otherwise.</p></li>
+<li><p>The sum is taken over all lattice sites.</p></li>
+</ul>
+</section>
+<section id="partition-function">
+<h3>Partition Function<a class="headerlink" href="#partition-function" title="Permalink to this headline">#</a></h3>
+<p>The partition function ((Z)) for the ideal lattice gas is derived from the Hamiltonian and represents the sum of all possible configurations:</p>
+<p>[ Z = \sum_{\text{all configurations}} e^{-\beta H} ]</p>
+<p>Here:</p>
+<ul class="simple">
+<li><p>(\beta = \frac{1}{k_B T}) is the inverse temperature, where (k_B) is the Boltzmann constant and (T) is the absolute temperature.</p></li>
+</ul>
+</section>
+<section id="free-energy">
+<h3>Free Energy<a class="headerlink" href="#free-energy" title="Permalink to this headline">#</a></h3>
+<p>The Helmholtz free energy ((F)) is obtained from the partition function:</p>
+<p>[ F = -k_B T \ln Z ]</p>
+</section>
+<section id="internal-energy-and-specific-heat">
+<h3>Internal Energy and Specific Heat<a class="headerlink" href="#internal-energy-and-specific-heat" title="Permalink to this headline">#</a></h3>
+<p>The internal energy ((U)) and specific heat ((C_V)) can be derived from the free energy:</p>
+<p>[ U = -\frac{\partial \ln Z}{\partial \beta} \quad \text{and} \quad C_V = \frac{\partial U}{\partial T} ]</p>
+</section>
+<section id="entropy">
+<h3>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">#</a></h3>
+<p>The entropy ((S)) is given by:</p>
+<p>[ S = \frac{\epsilon}{T} \frac{\partial \ln Z}{\partial \epsilon} + k_B \sum_{i} \left[ p_i \ln p_i + (1 - p_i) \ln (1 - p_i) \right] ]</p>
+<p>Here:</p>
+<ul class="simple">
+<li><p>(p_i) is the probability of finding a particle at site (i).</p></li>
+</ul>
+</section>
+<section id="particle-density">
+<h3>Particle Density<a class="headerlink" href="#particle-density" title="Permalink to this headline">#</a></h3>
+<p>The particle density ((n)) is given by the average number of particles per lattice site:</p>
+<p>[ n = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \epsilon} ]</p>
+</section>
+<section id="ideal-gas-law">
+<h3>Ideal Gas Law<a class="headerlink" href="#ideal-gas-law" title="Permalink to this headline">#</a></h3>
+<p>In the limit of low particle density, the ideal lattice gas model converges to the ideal gas law:</p>
+<p>[ PV = Nk_B T ]</p>
+<p>Here:</p>
+<ul class="simple">
+<li><p>(P) is the pressure.</p></li>
+<li><p>(V) is the volume.</p></li>
+<li><p>(N) is the total number of particles.</p></li>
+</ul>
+</section>
+</section>
+<section id="interacting-lattice-gas-with-nearest-neighbor-interactions">
+<h2>Interacting Lattice Gas with Nearest-Neighbor Interactions<a class="headerlink" href="#interacting-lattice-gas-with-nearest-neighbor-interactions" title="Permalink to this headline">#</a></h2>
+<p>In the context of statistical mechanics, an interacting lattice gas refers to a model where particles on a lattice experience interactions, specifically nearest-neighbor interactions. The energy associated with these interactions is denoted as (w).</p>
+<section id="id1">
+<h3>Hamiltonian and Energy<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>The Hamiltonian for an interacting lattice gas is extended to include the interaction energy (w) between nearest neighbors. It is expressed as:</p>
+<p>[ H = -\epsilon \sum_{i} n_i - w \sum_{\langle i,j \rangle} n_i n_j ]</p>
+<p>Here:</p>
+<ul class="simple">
+<li><p>(\epsilon) is the energy associated with placing a particle on a lattice site.</p></li>
+<li><p>(n_i) is a binary variable equal to 1 if a particle occupies site (i) and 0 otherwise.</p></li>
+<li><p>(w) is the interaction energy between nearest neighbors.</p></li>
+<li><p>(\langle i, j \rangle) denotes summation over nearest neighbors.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Partition Function<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>The partition function ((Z)) for the interacting lattice gas is derived from the Hamiltonian:</p>
+<p>[ Z = \sum_{\text{all configurations}} e^{-\beta H} ]</p>
+<p>Here:</p>
+<ul class="simple">
+<li><p>(\beta = \frac{1}{k_B T}) is the inverse temperature, where (k_B) is the Boltzmann constant and (T) is the absolute temperature.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Free Energy<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>The Helmholtz free energy ((F)) is obtained from the partition function:</p>
+<p>[ F = -k_B T \ln Z ]</p>
+</section>
+<section id="id4">
+<h3>Internal Energy and Specific Heat<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>The internal energy ((U)) and specific heat ((C_V)) can be derived from the free energy:</p>
+<p>[ U = -\frac{\partial \ln Z}{\partial \beta} \quad \text{and} \quad C_V = \frac{\partial U}{\partial T} ]</p>
+</section>
+<section id="id5">
+<h3>Entropy<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>The entropy ((S)) is given by:</p>
+<p>[ S = \frac{\epsilon}{T} \frac{\partial \ln Z}{\partial \epsilon} + k_B \sum_{i} \left[ p_i \ln p_i + (1 - p_i) \ln (1 - p_i) \right] ]</p>
+<p>Here:</p>
+<ul class="simple">
+<li><p>(p_i) is the probability of finding a particle at site (i).</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Particle Density<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>The particle density ((n)) is given by the average number of particles per lattice site:</p>
+<p>[ n = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \epsilon} ]</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lattice-theory-of-solutions">
+<h1>Lattice Theory of Solutions<a class="headerlink" href="#lattice-theory-of-solutions" title="Permalink to this headline">#</a></h1>
+<p>The lattice theory of solutions is a theoretical framework within statistical mechanics that provides a systematic approach to understanding the thermodynamic properties of solutions, particularly in the context of phase transitions and mixing behavior. This theory is particularly useful in describing idealized solutions and predicting their macroscopic properties.</p>
+<section id="id7">
+<h2>Introduction<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<p>In the lattice theory of solutions, the system is often represented as a lattice, where each lattice site can be occupied by a molecule or particle. This approach simplifies the complex interactions in a solution, making it a valuable tool for studying the thermodynamics of mixtures.</p>
+</section>
+<section id="lattice-model-formulation">
+<h2>Lattice Model Formulation<a class="headerlink" href="#lattice-model-formulation" title="Permalink to this headline">#</a></h2>
+<section id="id8">
+<h3>Hamiltonian and Energy<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<p>The starting point is the formulation of a Hamiltonian that describes the energy of the system based on the interactions between neighboring lattice sites. For a binary solution, the energy of the system ((E)) can be expressed as:</p>
+<p>[ E = -J \sum_{\langle i,j \rangle} \delta_{\sigma_i, \sigma_j} ]</p>
+<p>Here:</p>
+<ul class="simple">
+<li><p>(J) is the interaction parameter.</p></li>
+<li><p>(\langle i,j \rangle) denotes summation over nearest neighbors.</p></li>
+<li><p>(\delta_{\sigma_i, \sigma_j}) is the Kronecker delta function, equal to 1 if (\sigma_i = \sigma_j) and 0 otherwise.</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>Entropy<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<p>The entropy ((S)) is introduced to account for the mixing of particles in the solution. Assuming ideal mixing, the entropy is given by the well-known expression:</p>
+<p>[ S = -k_B \sum_{i} \left[p_i \ln p_i + (1 - p_i) \ln (1 - p_i)\right] ]</p>
+<p>Here:</p>
+<ul class="simple">
+<li><p>(k_B) is the Boltzmann constant.</p></li>
+<li><p>(p_i) is the probability of finding a particle of type (i) at a lattice site.</p></li>
+</ul>
+</section>
+</section>
+<section id="thermodynamic-properties">
+<h2>Thermodynamic Properties<a class="headerlink" href="#thermodynamic-properties" title="Permalink to this headline">#</a></h2>
+<section id="id10">
+<h3>Free Energy<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<p>The Helmholtz free energy ((F)) is derived by combining the energy and entropy terms:</p>
+<p>[ F = E - TS ]</p>
+</section>
+<section id="phase-transitions">
+<h3>Phase Transitions<a class="headerlink" href="#phase-transitions" title="Permalink to this headline">#</a></h3>
+<p>By analyzing the free energy, the lattice theory of solutions predicts phase transitions in the system. For instance, in a binary solution, the model can describe demixing or phase separation as a function of temperature and composition.</p>
+</section>
+</section>
+<section id="limitations-and-extensions">
+<h2>Limitations and Extensions<a class="headerlink" href="#limitations-and-extensions" title="Permalink to this headline">#</a></h2>
+<p>While the lattice theory of solutions provides valuable insights into the thermodynamics of idealized solutions, it has limitations in capturing real-world complexities, such as non-ideal mixing and interactions. Extensions, including mean-field theories and more sophisticated models, aim to address these limitations for a more accurate description of complex solutions.</p>
+</section>
+<section id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">#</a></h2>
+<p>The lattice theory of solutions finds applications in various fields, including chemistry, physics, and materials science. It is particularly useful for predicting phase diagrams, studying phase transitions, and gaining a fundamental understanding of the thermodynamic behavior of solutions.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>The lattice theory of solutions offers a structured and mathematical approach to study the thermodynamics of solutions, providing a foundation for understanding phase transitions and mixing behavior. While it serves as a valuable theoretical tool for idealized scenarios, researchers often combine this approach with experimental data and more advanced theoretical models to capture the complexities of real-world solutions.</p>
+</section>
+<section id="the-ising-model">
+<h2>The Ising Model<a class="headerlink" href="#the-ising-model" title="Permalink to this headline">#</a></h2>
+<p>The Ising model, named after physicist Ernst Ising, stands as a foundational concept in statistical mechanics, offering valuable insights into phase transitions and magnetic properties in materials. This mathematical model simplifies the intricate interactions within a system, making it particularly applicable in the exploration of ferromagnetism.</p>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h3>
+<p>The two-dimensional Ising model is a simplified representation of a magnetic material where each magnetic moment (spin) interacts only with its nearest neighbors. The system’s elements, often representing magnetic moments, are assigned binary spins – typically up or down. These spins interact primarily with their nearest neighbors, influencing each other’s orientation. The model’s behavior is described by the following simple Hamiltonian:</p>
+<p>[ H = -J \sum_{\langle i,j \rangle} s_i s_j - h \sum_{i} s_i ]</p>
+<p>Here:</p>
+<ul class="simple">
+<li><p>(J) represents the strength of interactions between spins.</p></li>
+<li><p>(s_i) is the spin at site (i).</p></li>
+<li><p>(\langle i,j \rangle) denotes summation over nearest neighbors.</p></li>
+<li><p>(h) is an external magnetic field.</p></li>
+</ul>
+<p>A defining feature of the Ising model is its ability to exhibit phase transitions. In particular, it undergoes a ferromagnetic transition where spins align, leading to the material becoming magnetized. This critical behavior is pivotal for understanding the emergence of macroscopic properties in various physical systems. The Ising model finds widespread applications in physics and material science. It serves as a crucial tool for studying critical phenomena and phase transitions. In material science, the model aids in comprehending magnetic properties in diverse materials, providing a bridge between microscopic interactions and macroscopic behaviors.</p>
+</section>
+</section>
+<section id="onsagers-connection-to-the-ising-model">
+<h2>Onsager’s Connection to the Ising Model<a class="headerlink" href="#onsagers-connection-to-the-ising-model" title="Permalink to this headline">#</a></h2>
+<p>Lars Onsager, a distinguished theoretical physicist, made a groundbreaking contribution to statistical mechanics by providing an exact solution for the two-dimensional Ising model in 1944. Onsager’s solution was a significant breakthrough, as solving the Ising model exactly had proven to be a formidable mathematical challenge.</p>
+<section id="key-contributions">
+<h3>Key Contributions<a class="headerlink" href="#key-contributions" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
-<li><p>Calculate the energies of different configurations of the alloy using the cluster expansion method.</p></li>
-<li><p>Use the convex hull construction to identify the lowest-energy configurations, or phases, at a given composition.</p></li>
-<li><p>Plot the energies of all possible configurations of the alloy as a function of their compositions.</p></li>
-<li><p>Draw a convex hull around the lowest-energy configurations, and identify the points on the hull as the most stable phases at the given composition.</p></li>
+<li><p><strong>Partition Function:</strong></p>
+<ul class="simple">
+<li><p>Onsager derived a closed-form expression for the partition function of the two-dimensional Ising model, encapsulating the statistical properties of the system.</p></li>
+</ul>
+</li>
+<li><p><strong>Critical Temperature:</strong></p>
+<ul class="simple">
+<li><p>Determined the critical temperature for the phase transition in the two-dimensional Ising model, where the material undergoes a transition from a disordered to an ordered state, exhibiting spontaneous magnetization.</p></li>
+</ul>
+</li>
+<li><p><strong>Magnetization Profile:</strong></p>
+<ul class="simple">
+<li><p>Provided insights into the behavior of magnetization as a function of temperature, shedding light on the nature of the phase transition.</p></li>
+</ul>
+</li>
 </ol>
-<p>Connect the points on the convex hull with lines to represent the phase boundaries.</p>
-<p>The resulting phase diagram shows the stable phases of the alloy at different compositions, and the transitions between them. This can be useful in predicting the behavior of the alloy under different conditions, such as changes in temperature or pressure. However, if we only consider total energies of static structures we are neglecting to role of configurational dissorder in the system. For a given composition we may have many configruations with similar energies. The system is therefor typically better represented by a weighted average (from the Boltzmann distribution) over all these configuration, a so-called ensamble average.</p>
-<p>From the simple example above we realise that it will be unfeasible in the general case to compute the energy of all configurations, there is simply too many of them. Here, Monte-Carlo simulations can be used to rigoursly compute such ensemble averages without having to evaluate all these energies.</p>
-<p><img alt="Convex Hull" src="../_images/ASE_Hull1.png" /></p>
-<p><em><strong>Figure.</strong></em> <em>An example of a convex hull for a Cu-Pt alloy system. The solid blue line is convex hull and all point on it correspond to stable compositions (marked with formulas). Points above the hull are unstable. (<a class="reference external" href="https://wiki.fysik.dtu.dk/ase/tutorials/ga/ga_convex_hull.html">The figure is taken from the atomic simulations environment wiki page</a>.)</em></p>
 </section>
-<section id="metropolis-monte-carlo-mc">
-<h2>Metropolis Monte-Carlo (MC)<a class="headerlink" href="#metropolis-monte-carlo-mc" title="Permalink to this headline">#</a></h2>
-<p>The Metropolis Monte Carlo simulation technique is a powerful computational method used to simulate the thermodynamcs of dissordered systems in condensed matter physics, chemistry, and materials science.</p>
-<p>The Metropolis Monte Carlo simulation technique works by randomly proposing new configurations of the system, and accepting or rejecting them based on their energy difference relative to the current configuration. The probability of accepting a new configuration is determined by the Metropolis criterion, which ensures that the simulation samples the correct thermodynamic ensemble (it complies with the Boltzmann distribution).</p>
-<p>The Metropolis criterion states that the probability of accepting a new configuration with energy difference <span class="math notranslate nohighlight">\(\Delta E\)</span> is given by:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\\
-P(\Delta E) = min  \{ e^{-\Delta E/k_BT}, 1  \}
-\\
-\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant, <span class="math notranslate nohighlight">\(T\)</span> is the temperature, and <span class="math notranslate nohighlight">\(\Delta E\)</span> is the energy difference between the proposed  configuration and the current configuration. This means that, if the propsoed configuration has a lower energy it is always accepted.</p>
-<p>In practice, the Metropolis Monte Carlo simulation technique involves the following steps:</p>
-<ol class="simple">
-<li><p>Choose a starting configuration for the system.</p></li>
-<li><p>Randomly propose a new configuration by moving one or more atoms or molecules in the system.</p></li>
-<li><p>Calculate the energy difference between the proposed configuration and the current configuration.</p></li>
-<li><p>Determine whether to accept or reject the proposed configuration based on the Metropolis criterion.</p></li>
-<li><p>Record/save the current configuration into a data-base. <em>Note that the same configurations can be added twice or more when we reject proposed configurations. This is a key-point of the approach, low energy configuration shall be mre predominant in our data-base.</em></p></li>
-<li><p>Repeat steps 2-4 for a large number <span class="math notranslate nohighlight">\(N\)</span> of iterations , allowing the simulation to explore the configuration space of the system.</p></li>
-</ol>
-<p>From the data-base generated in this procedure, we can calculate thermodynamic properties of the system, such as the heat capacity and free energy. In order to do so we simply take the average of the property calculated using all configurations in our data-base. For example the internal energy, <span class="math notranslate nohighlight">\(&lt;U&gt;\)</span>, can be calculated as follows:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\\
-&lt;U&gt; = \frac{1}{N} \sum_{n}^{N} E_i
-\\
-\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of configurations in our data-base, and <span class="math notranslate nohighlight">\(E_n\)</span> is the energy of configuration <span class="math notranslate nohighlight">\(n\)</span>. The concept can be generalized to any property that can be computed for the single configurations (so-called mechanical properties).</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\\
-&lt;A&gt; = \frac{1}{N} \sum_{n}^{N} A_n
-\\
-\end{split}\]</div>
-<p><a class="reference external" href="https://chi-feng.github.io/mcmc-demo/app.html?algorithm=RandomWalkMH&amp;target=banana">The concept os this type of sampling is neatly illustrated in this interactive example</a>.</p>
-</section>
-<section id="combining-ce-and-mc">
-<h2>Combining CE and MC<a class="headerlink" href="#combining-ce-and-mc" title="Permalink to this headline">#</a></h2>
-<p>The combination of cluster expansion and Monte Carlo simulations can be used to study a wide range of properties of alloys, such as phase stability, order-disorder transitions, and defects such as vacancies or interstitials. It also a very powerful technique to simulate Li intercalation on cathode and anonde materials in the context of batteries (see e.g. <a class="reference external" href="https://iopscience.iop.org/article/10.1088/1361-648X/ab1bbc">Ref.</a>)</p>
-<p>The method can also be used to construct a phase diagram that shows the stable phases of the alloy as a function of temperature and composition.</p>
 <section id="tutorial">
 <h3>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">#</a></h3>
 <a target="_blank" href="https://colab.research.google.com/github/jollactic/Modelling_course/blob/main/CE_MC/Tutorial_LMO.ipynb">
