@@ -363,20 +363,64 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metropolis-monte-carlo-mc">
-   Metropolis Monte-Carlo (MC)
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Monte-Carlo
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tutorial">
-     Tutorial
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#monte-carlo-integration">
+   Monte Carlo Integration
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#area-of-a-single-circle">
+     Area of a Single Circle
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#further-reading">
-     Further reading:
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-overlapping-circles">
+     Multiple Overlapping Circles
     </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#detailed-balance">
+     Detailed Balance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#detailed-balance-condition">
+       Detailed Balance Condition
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#detailed-balance-in-monte-carlo-simulations">
+       Detailed Balance in Monte Carlo Simulations
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ensuring-convergence">
+       Ensuring Convergence
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metropolis-monte-carlo-mc">
+     Metropolis Monte-Carlo (MC)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tutorial">
+       Tutorial
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#further-reading">
+       Further reading:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -399,20 +443,64 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metropolis-monte-carlo-mc">
-   Metropolis Monte-Carlo (MC)
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Monte-Carlo
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tutorial">
-     Tutorial
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#monte-carlo-integration">
+   Monte Carlo Integration
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#area-of-a-single-circle">
+     Area of a Single Circle
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#further-reading">
-     Further reading:
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-overlapping-circles">
+     Multiple Overlapping Circles
     </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#detailed-balance">
+     Detailed Balance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#detailed-balance-condition">
+       Detailed Balance Condition
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#detailed-balance-in-monte-carlo-simulations">
+       Detailed Balance in Monte Carlo Simulations
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ensuring-convergence">
+       Ensuring Convergence
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metropolis-monte-carlo-mc">
+     Metropolis Monte-Carlo (MC)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tutorial">
+       Tutorial
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#further-reading">
+       Further reading:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -428,6 +516,63 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="monte-carlo">
 <h1>Monte-Carlo<a class="headerlink" href="#monte-carlo" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="monte-carlo-integration">
+<h1>Monte Carlo Integration<a class="headerlink" href="#monte-carlo-integration" title="Permalink to this headline">#</a></h1>
+<p>Monte Carlo integration is a numerical technique for estimating definite integrals using random sampling. It is particularly useful when dealing with complex or high-dimensional integrals that are challenging to solve analytically. The basic idea is to use random sampling to obtain a statistical approximation of the integral.</p>
+<section id="area-of-a-single-circle">
+<h2>Area of a Single Circle<a class="headerlink" href="#area-of-a-single-circle" title="Permalink to this headline">#</a></h2>
+<p>Consider the task of computing the area of a circle using Monte Carlo integration. The formula for the area of a circle is (A = \pi r^2), where (r) is the radius. Instead of relying on this formula, we can use random sampling to estimate the area.</p>
+<ol class="simple">
+<li><p><strong>Generate Random Points</strong>: Randomly scatter points within a bounding square that encloses the circle.</p></li>
+<li><p><strong>Count Points Inside the Circle</strong>: Determine how many points fall inside the circle by checking if the distance from the origin to each point is less than the radius of the circle.</p></li>
+<li><p><strong>Estimate Area</strong>: The ratio of points inside the circle to the total points generated provides an estimate of the fraction of the area covered by the circle. Multiply this ratio by the area of the bounding square to obtain the estimated area of the circle.</p></li>
+</ol>
+</section>
+<section id="multiple-overlapping-circles">
+<h2>Multiple Overlapping Circles<a class="headerlink" href="#multiple-overlapping-circles" title="Permalink to this headline">#</a></h2>
+<p>Extending the concept to multiple overlapping circles involves a similar process:</p>
+<ol class="simple">
+<li><p><strong>Generate Random Points</strong>: Scatter points within a bounding square that encompasses all the circles.</p></li>
+<li><p><strong>Count Points Inside Any Circle</strong>: For each point, check if it falls inside any of the circles.</p></li>
+<li><p><strong>Estimate Total Area</strong>: The ratio of points inside any circle to the total points generated gives an estimate of the fraction of the total area covered by the circles. Multiply this ratio by the area of the bounding square to obtain the estimated total area.</p></li>
+</ol>
+<p><img alt="Lattice" src="../_images/circles.gif" /></p>
+</section>
+<section id="detailed-balance">
+<h2>Detailed Balance<a class="headerlink" href="#detailed-balance" title="Permalink to this headline">#</a></h2>
+<p>Detailed balance is a fundamental concept in Monte Carlo simulations, ensuring that the simulated system reaches a proper equilibrium state. It is a condition that the transition rates between different states in a Markov Chain Monte Carlo (MCMC) simulation are such that, when reached, the system maintains a balance between forward and reverse transitions. In other words, the probability of transitioning from one state to another is the same as the probability of transitioning back.</p>
+<section id="detailed-balance-condition">
+<h3>Detailed Balance Condition<a class="headerlink" href="#detailed-balance-condition" title="Permalink to this headline">#</a></h3>
+<p>Mathematically, the detailed balance condition is expressed as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+P_i \cdot T_{ij} = P_j \cdot T_{ji}
+\]</div>
+<p>Here:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P_i\)</span> is the probability of being in state <span class="math notranslate nohighlight">\(i\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P_j\)</span> is the probability of being in state <span class="math notranslate nohighlight">\(j\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_{ij}\)</span> is the transition probability from state <span class="math notranslate nohighlight">\(i\)</span> to state <span class="math notranslate nohighlight">\(j\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_{ji}\)</span> is the transition probability from state <span class="math notranslate nohighlight">\(j\)</span> to state <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+</ul>
+<p>This condition ensures that the system, when in equilibrium, does not favor transitions in one direction over the reverse.</p>
+</section>
+<section id="detailed-balance-in-monte-carlo-simulations">
+<h3>Detailed Balance in Monte Carlo Simulations<a class="headerlink" href="#detailed-balance-in-monte-carlo-simulations" title="Permalink to this headline">#</a></h3>
+<p>In Monte Carlo simulations, detailed balance is crucial for the proper sampling of the configuration space. The simulation generates a sequence of states by proposing moves, and detailed balance ensures that these moves are accepted or rejected in a way that preserves the equilibrium distribution.</p>
+<p>In the context of a Metropolis-Hastings Monte Carlo algorithm, which is widely used, detailed balance is implemented through an acceptance probability. The probability of accepting a move from state <span class="math notranslate nohighlight">\(i\)</span> to state <span class="math notranslate nohighlight">\(j\)</span> (<span class="math notranslate nohighlight">\(A_{ij}\)</span>) is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+A_{ij} = \min\left(1, \frac{P_j}{P_i} \cdot \frac{T_{ji}}{T_{ij}}\right)
+\]</div>
+<p>This formula ensures that, on average, transitions from <span class="math notranslate nohighlight">\(i\)</span> to <span class="math notranslate nohighlight">\(j\)</span> are as likely as transitions from <span class="math notranslate nohighlight">\(j\)</span> to <span class="math notranslate nohighlight">\(i\)</span>, satisfying the detailed balance condition.</p>
+</section>
+<section id="ensuring-convergence">
+<h3>Ensuring Convergence<a class="headerlink" href="#ensuring-convergence" title="Permalink to this headline">#</a></h3>
+<p>Ensuring detailed balance is crucial for the convergence of the Monte Carlo simulation to the correct equilibrium distribution. Without detailed balance, the simulation might not reach a steady-state, leading to biased results.</p>
+</section>
+</section>
 <section id="metropolis-monte-carlo-mc">
 <h2>Metropolis Monte-Carlo (MC)<a class="headerlink" href="#metropolis-monte-carlo-mc" title="Permalink to this headline">#</a></h2>
 <p>The Metropolis Monte Carlo simulation technique is a powerful computational method used to simulate the thermodynamcs of dissordered systems in condensed matter physics, chemistry, and materials science.</p>

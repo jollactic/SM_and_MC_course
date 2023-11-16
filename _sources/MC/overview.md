@@ -1,5 +1,71 @@
 # Monte-Carlo
 
+# Monte Carlo Integration
+
+Monte Carlo integration is a numerical technique for estimating definite integrals using random sampling. It is particularly useful when dealing with complex or high-dimensional integrals that are challenging to solve analytically. The basic idea is to use random sampling to obtain a statistical approximation of the integral.
+
+## Area of a Single Circle
+
+Consider the task of computing the area of a circle using Monte Carlo integration. The formula for the area of a circle is \(A = \pi r^2\), where \(r\) is the radius. Instead of relying on this formula, we can use random sampling to estimate the area.
+
+1. **Generate Random Points**: Randomly scatter points within a bounding square that encloses the circle.
+
+2. **Count Points Inside the Circle**: Determine how many points fall inside the circle by checking if the distance from the origin to each point is less than the radius of the circle.
+
+3. **Estimate Area**: The ratio of points inside the circle to the total points generated provides an estimate of the fraction of the area covered by the circle. Multiply this ratio by the area of the bounding square to obtain the estimated area of the circle.
+
+## Multiple Overlapping Circles
+
+Extending the concept to multiple overlapping circles involves a similar process:
+
+1. **Generate Random Points**: Scatter points within a bounding square that encompasses all the circles.
+
+2. **Count Points Inside Any Circle**: For each point, check if it falls inside any of the circles.
+
+3. **Estimate Total Area**: The ratio of points inside any circle to the total points generated gives an estimate of the fraction of the total area covered by the circles. Multiply this ratio by the area of the bounding square to obtain the estimated total area.
+
+
+![Lattice](circles.gif)
+
+
+## Detailed Balance
+
+Detailed balance is a fundamental concept in Monte Carlo simulations, ensuring that the simulated system reaches a proper equilibrium state. It is a condition that the transition rates between different states in a Markov Chain Monte Carlo (MCMC) simulation are such that, when reached, the system maintains a balance between forward and reverse transitions. In other words, the probability of transitioning from one state to another is the same as the probability of transitioning back.
+
+### Detailed Balance Condition
+
+Mathematically, the detailed balance condition is expressed as follows:
+
+$$
+P_i \cdot T_{ij} = P_j \cdot T_{ji}
+$$
+
+Here:
+- $P_i$ is the probability of being in state $i$,
+- $P_j$ is the probability of being in state $j$,
+- $T_{ij}$ is the transition probability from state $i$ to state $j$,
+- $T_{ji}$ is the transition probability from state $j$ to state $i$.
+
+This condition ensures that the system, when in equilibrium, does not favor transitions in one direction over the reverse.
+
+### Detailed Balance in Monte Carlo Simulations
+
+In Monte Carlo simulations, detailed balance is crucial for the proper sampling of the configuration space. The simulation generates a sequence of states by proposing moves, and detailed balance ensures that these moves are accepted or rejected in a way that preserves the equilibrium distribution.
+
+In the context of a Metropolis-Hastings Monte Carlo algorithm, which is widely used, detailed balance is implemented through an acceptance probability. The probability of accepting a move from state $i$ to state $j$ ($A_{ij}$) is given by:
+
+$$
+A_{ij} = \min\left(1, \frac{P_j}{P_i} \cdot \frac{T_{ji}}{T_{ij}}\right)
+$$
+
+This formula ensures that, on average, transitions from $i$ to $j$ are as likely as transitions from $j$ to $i$, satisfying the detailed balance condition.
+
+### Ensuring Convergence
+
+Ensuring detailed balance is crucial for the convergence of the Monte Carlo simulation to the correct equilibrium distribution. Without detailed balance, the simulation might not reach a steady-state, leading to biased results.
+
+
+
 ## Metropolis Monte-Carlo (MC)
 
 The Metropolis Monte Carlo simulation technique is a powerful computational method used to simulate the thermodynamcs of dissordered systems in condensed matter physics, chemistry, and materials science.
