@@ -114,22 +114,22 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../SYSTEMS/overview.html">
-   REPRESENTING SYSTEMS IN ELECTRONIC AND ATOMISTIC SIMULATIONS
+   SIMULATIONS CELLS AND PERIODIC BOUNDARY CONDITIONS
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Lattice/overview.html">
-   Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling
+   Lattice models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MC/overview.html">
+   Monte-Carlo
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../DFT/overview.html">
    ELECTRONIC STRUCTURE - Density Functional Theory (DFT)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CE_MC/overview.html">
-   Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -957,8 +957,8 @@ f(t) = \frac{1}{2} - \frac{1}{\pi} \sum_{k=1}^{\infty} (-1)^k \frac{\sin(2 \pi k
 f_N(t) = \frac{1}{2} - \frac{1}{\pi} \sum_{k=1}^{N} (-1)^k \frac{\sin(2 \pi k t)}{k}
 \]</div>
 <p>Create a 2 by 2 grid of subplots to plot the first 4 partial sums:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3470dca-e9d8-4266-9cec-0ca2505335e9">
-<span class="eqno">(5)<a class="headerlink" href="#equation-b3470dca-e9d8-4266-9cec-0ca2505335e9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9ce955fc-a203-4f4c-a25d-b00b786e5ad2">
+<span class="eqno">(5)<a class="headerlink" href="#equation-9ce955fc-a203-4f4c-a25d-b00b786e5ad2" title="Permalink to this equation">#</a></span>\[\begin{align}
 f_1(t) &amp;= \frac{1}{2} + \frac{\sin(2 \pi t)}{\pi} \\\
 f_2(t) &amp;= \frac{1}{2} + \frac{\sin(2 \pi t)}{\pi} - \frac{\sin(4 \pi t)}{2\pi} \\\
 f_3(t) &amp;= \frac{1}{2} + \frac{\sin(2 \pi t)}{\pi} - \frac{\sin(4 \pi t)}{2\pi} + \frac{\sin(6 \pi t)}{3\pi} \\\

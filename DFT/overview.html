@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://github.com/jollactic/SM_and_MC_course/DFT/overview.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling" href="../CE_MC/overview.html" />
-    <link rel="prev" title="Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling" href="../Lattice/overview.html" />
+    <link rel="next" title="Programming in Python" href="../PythonBasics/Readme.html" />
+    <link rel="prev" title="Monte-Carlo" href="../MC/overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -114,22 +114,22 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../SYSTEMS/overview.html">
-   REPRESENTING SYSTEMS IN ELECTRONIC AND ATOMISTIC SIMULATIONS
+   SIMULATIONS CELLS AND PERIODIC BOUNDARY CONDITIONS
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../Lattice/overview.html">
-   Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling
+   Lattice models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../MC/overview.html">
+   Monte-Carlo
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    ELECTRONIC STRUCTURE - Density Functional Theory (DFT)
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../CE_MC/overview.html">
-   Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling
   </a>
  </li>
  <li class="toctree-l1 has-children">
@@ -493,25 +493,25 @@ title="Print to PDF"
 <section id="thomas-fermi-theory">
 <h2>Thomas-Fermi theory<a class="headerlink" href="#thomas-fermi-theory" title="Permalink to this headline">#</a></h2>
 <p>Consider a system of electrons in a uniform, positively charged background potential <span class="math notranslate nohighlight">\(V(r)\)</span>. We assume that the electrons are free to move in three dimensions but are confined to a box of volume <span class="math notranslate nohighlight">\(V\)</span>. The wavefunction of the particle is given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-be04a4ca-d3fa-49df-8ebb-8a66ca23cfe8">
-<span class="eqno">(1)<a class="headerlink" href="#equation-be04a4ca-d3fa-49df-8ebb-8a66ca23cfe8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-65aa7090-b206-45f1-be96-c7148c37e2ba">
+<span class="eqno">(1)<a class="headerlink" href="#equation-65aa7090-b206-45f1-be96-c7148c37e2ba" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \psi_{n_x,n_y,n_z}(x,y,z) = \sqrt{\frac{8}{L_x L_y L_z}} \sin\left(\frac{n_x \pi x}{L_x}\right) \sin\left(\frac{n_y \pi y}{L_y}\right) \sin\left(\frac{n_z \pi z}{L_z}\right),
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n_x\)</span>, <span class="math notranslate nohighlight">\(n_y\)</span>, and <span class="math notranslate nohighlight">\(n_z\)</span> are non-negative integers associated with the three dimensions of the box.</p>
 <p>The allowed energies of the particle are given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-506e1f96-e901-49ba-8b5c-def4acfcf4d0">
-<span class="eqno">(2)<a class="headerlink" href="#equation-506e1f96-e901-49ba-8b5c-def4acfcf4d0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f701f949-7e35-4b6d-9d3b-ccd40fe94e44">
+<span class="eqno">(2)<a class="headerlink" href="#equation-f701f949-7e35-4b6d-9d3b-ccd40fe94e44" title="Permalink to this equation">#</a></span>\[\begin{equation}
 E_{n_x,n_y,n_z} = \frac{\hbar^2\pi^2}{2m}\left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} + \frac{n_z^2}{L_z^2}\right),
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(m\)</span> is the mass of the particle.</p>
 <p>We can count the number of states with energy less than or equal to <span class="math notranslate nohighlight">\(E\)</span> by considering the volume of momentum space that corresponds to those states. Specifically, the volume of momentum space corresponding to energies less than or equal to <span class="math notranslate nohighlight">\(E\)</span> is the volume of a sphere of radius <span class="math notranslate nohighlight">\(p\)</span> in momentum space, where <span class="math notranslate nohighlight">\(p\)</span> is related to <span class="math notranslate nohighlight">\(E\)</span> through:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3956eb6-7f41-4e3e-9bda-e553a53eabe5">
-<span class="eqno">(3)<a class="headerlink" href="#equation-b3956eb6-7f41-4e3e-9bda-e553a53eabe5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3d92d3c3-7115-4fb6-b598-dd7739fffb59">
+<span class="eqno">(3)<a class="headerlink" href="#equation-3d92d3c3-7115-4fb6-b598-dd7739fffb59" title="Permalink to this equation">#</a></span>\[\begin{equation}
 E_{n_x,n_y,n_z} = \frac{p^2}{2m}.
 \end{equation}\]</div>
 <p>Solving for <span class="math notranslate nohighlight">\(p\)</span> in terms of <span class="math notranslate nohighlight">\(E\)</span> yields:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b468f80-0e3e-45e9-9446-41b215be9545">
-<span class="eqno">(4)<a class="headerlink" href="#equation-7b468f80-0e3e-45e9-9446-41b215be9545" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b431f30e-9f74-4f28-96a3-08df7a4515e5">
+<span class="eqno">(4)<a class="headerlink" href="#equation-b431f30e-9f74-4f28-96a3-08df7a4515e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 p = \sqrt{2mE}.
 \end{equation}\]</div>
 <p>The volume (in the first octant) of the sphere in momentum space is then given by:</p>
@@ -686,17 +686,17 @@ Note that parameters like basis-set quality and k-point sampling in the tutorial
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Lattice/overview.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../MC/overview.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling</p>
+            <p class="prev-next-title">Monte-Carlo</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../CE_MC/overview.html" title="next page">
+    <a class='right-next' id="next-link" href="../PythonBasics/Readme.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Dealing with dissordered structures - Cluster expansion and Monte-Carlo sampling</p>
+        <p class="prev-next-title">Programming in Python</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

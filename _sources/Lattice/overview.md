@@ -25,113 +25,121 @@ In the ideal lattice gas model, the system is often conceptualized as a lattice,
 
 The Hamiltonian for the ideal lattice gas model is straightforward, capturing the energy associated with placing particles on the lattice sites. It is expressed as:
 
-\[ H = -\epsilon \sum_{i} n_i \]
+$$
+\\
+ H = -\epsilon \sum_{i} n_i
+\\
+$$
 
 Here:
-- \(\epsilon\) is the energy associated with placing a particle on a lattice site.
-- \(n_i\) is a binary variable equal to 1 if a particle occupies site \(i\) and 0 otherwise.
+- $$epsilon$) is the energy associated with placing a particle on a lattice site.
+- $n_i$ is a binary variable equal to 1 if a particle occupies site $i$ and 0 otherwise.
 - The sum is taken over all lattice sites.
 
 ### Partition Function
 
-The partition function (\(Z\)) for the ideal lattice gas is derived from the Hamiltonian and represents the sum of all possible configurations:
+The partition function $Z$ for the ideal lattice gas is derived from the Hamiltonian and represents the sum of all possible configurations:
 
-\[ Z = \sum_{\text{all configurations}} e^{-\beta H} \]
-
+$$
+\\
+ Z = \sum_{\text{all configurations}} e^{-\beta H} 
+\\
+$$
 Here:
-- \(\beta = \frac{1}{k_B T}\) is the inverse temperature, where \(k_B\) is the Boltzmann constant and \(T\) is the absolute temperature.
+
+- $\beta = \frac{1}{k_B T}$ is the inverse temperature, where $k_B$ is the Boltzmann constant and $T$ is the absolute temperature.
 
 ### Free Energy
 
-The Helmholtz free energy (\(F\)) is obtained from the partition function:
+The Helmholtz free energy ($F$) is obtained from the partition function:
 
-\[ F = -k_B T \ln Z \]
+$$ \\ F = -k_B T \ln Z \\ $$ 
 
 ### Internal Energy and Specific Heat
 
-The internal energy (\(U\)) and specific heat (\(C_V\)) can be derived from the free energy:
+The internal energy ($U$) and specific heat ($C_V$) can be derived from the free energy:
 
-\[ U = -\frac{\partial \ln Z}{\partial \beta} \quad \text{and} \quad C_V = \frac{\partial U}{\partial T} \]
+$$ \\ U = -\frac{\partial \ln Z}{\partial \beta} \quad \text{and} \quad C_V = \frac{\partial U}{\partial T} \\ $$ 
 
 ### Entropy
 
-The entropy (\(S\)) is given by:
+The entropy ($S$) is given by:
 
-\[ S = \frac{\epsilon}{T} \frac{\partial \ln Z}{\partial \epsilon} + k_B \sum_{i} \left[ p_i \ln p_i + (1 - p_i) \ln (1 - p_i) \right] \]
+$$ \\ S = \frac{\epsilon}{T} \frac{\partial \ln Z}{\partial \epsilon} + k_B \sum_{i} \left[ p_i \ln p_i + (1 - p_i) \ln (1 - p_i) \right] \\ $$ 
 
 Here:
-- \(p_i\) is the probability of finding a particle at site \(i\).
+- $p_i$ is the probability of finding a particle at site $i$.
 
 ### Particle Density
 
-The particle density (\(n\)) is given by the average number of particles per lattice site:
+The particle density ($n$) is given by the average number of particles per lattice site:
 
-\[ n = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \epsilon} \]
+$$ \\ n = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \epsilon} \\ $$ 
 
 ### Ideal Gas Law
 
 In the limit of low particle density, the ideal lattice gas model converges to the ideal gas law:
 
-\[ PV = Nk_B T \]
+$$ \\ PV = Nk_B T \\ $$ 
 
 Here:
-- \(P\) is the pressure.
-- \(V\) is the volume.
-- \(N\) is the total number of particles.
+- $P$ is the pressure.
+- $V$ is the volume.
+- $N$ is the total number of particles.
 
 
 
 ## Interacting Lattice Gas with Nearest-Neighbor Interactions
 
-In the context of statistical mechanics, an interacting lattice gas refers to a model where particles on a lattice experience interactions, specifically nearest-neighbor interactions. The energy associated with these interactions is denoted as \(w\).
+In the context of statistical mechanics, an interacting lattice gas refers to a model where particles on a lattice experience interactions, specifically nearest-neighbor interactions. The energy associated with these interactions is denoted as $w$.
 
 ### Hamiltonian and Energy
 
-The Hamiltonian for an interacting lattice gas is extended to include the interaction energy \(w\) between nearest neighbors. It is expressed as:
+The Hamiltonian for an interacting lattice gas is extended to include the interaction energy $w$ between nearest neighbors. It is expressed as:
 
-\[ H = -\epsilon \sum_{i} n_i - w \sum_{\langle i,j \rangle} n_i n_j \]
+$$ \\ H = -\epsilon \sum_{i} n_i - w \sum_{\langle i,j \rangle} n_i n_j \\ $$ 
 
 Here:
-- \(\epsilon\) is the energy associated with placing a particle on a lattice site.
-- \(n_i\) is a binary variable equal to 1 if a particle occupies site \(i\) and 0 otherwise.
-- \(w\) is the interaction energy between nearest neighbors.
-- \(\langle i, j \rangle\) denotes summation over nearest neighbors.
+- $\epsilon$ is the energy associated with placing a particle on a lattice site.
+- $n_i$ is a binary variable equal to 1 if a particle occupies site $i$ and 0 otherwise.
+- $w$ is the interaction energy between nearest neighbors.
+- $\langle i, j \rangle$ denotes summation over nearest neighbors.
 
 ### Partition Function
 
-The partition function (\(Z\)) for the interacting lattice gas is derived from the Hamiltonian:
+The partition function ($Z$) for the interacting lattice gas is derived from the Hamiltonian:
 
-\[ Z = \sum_{\text{all configurations}} e^{-\beta H} \]
+$$ \\ Z = \sum_{\text{all configurations}} e^{-\beta H} \\ $$ 
 
 Here:
-- \(\beta = \frac{1}{k_B T}\) is the inverse temperature, where \(k_B\) is the Boltzmann constant and \(T\) is the absolute temperature.
+- $\beta = \frac{1}{k_B T}$ is the inverse temperature, where $k_B$ is the Boltzmann constant and $T$ is the absolute temperature.
 
 ### Free Energy
 
-The Helmholtz free energy (\(F\)) is obtained from the partition function:
+The Helmholtz free energy ($F$) is obtained from the partition function:
 
-\[ F = -k_B T \ln Z \]
+$$ \\ F = -k_B T \ln Z \\ $$ 
 
 ### Internal Energy and Specific Heat
 
-The internal energy (\(U\)) and specific heat (\(C_V\)) can be derived from the free energy:
+The internal energy ($U$) and specific heat ($C_V$) can be derived from the free energy:
 
-\[ U = -\frac{\partial \ln Z}{\partial \beta} \quad \text{and} \quad C_V = \frac{\partial U}{\partial T} \]
+$$ \\ U = -\frac{\partial \ln Z}{\partial \beta} \quad \text{and} \quad C_V = \frac{\partial U}{\partial T} \\ $$ 
 
 ### Entropy
 
-The entropy (\(S\)) is given by:
+The entropy ($S$) is given by:
 
-\[ S = \frac{\epsilon}{T} \frac{\partial \ln Z}{\partial \epsilon} + k_B \sum_{i} \left[ p_i \ln p_i + (1 - p_i) \ln (1 - p_i) \right] \]
+$$ \\ S = \frac{\epsilon}{T} \frac{\partial \ln Z}{\partial \epsilon} + k_B \sum_{i} \left[ p_i \ln p_i + (1 - p_i) \ln (1 - p_i) \right] \\ $$ 
 
 Here:
-- \(p_i\) is the probability of finding a particle at site \(i\).
+- $p_i$ is the probability of finding a particle at site $i$.
 
 ### Particle Density
 
-The particle density (\(n\)) is given by the average number of particles per lattice site:
+The particle density ($n$) is given by the average number of particles per lattice site:
 
-\[ n = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \epsilon} \]
+$$ \\ n = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \epsilon} \\ $$ 
 
 
 
@@ -151,32 +159,32 @@ In the lattice theory of solutions, the system is often represented as a lattice
 
 ### Hamiltonian and Energy
 
-The starting point is the formulation of a Hamiltonian that describes the energy of the system based on the interactions between neighboring lattice sites. For a binary solution, the energy of the system (\(E\)) can be expressed as:
+The starting point is the formulation of a Hamiltonian that describes the energy of the system based on the interactions between neighboring lattice sites. For a binary solution, the energy of the system ($E$) can be expressed as:
 
-\[ E = -J \sum_{\langle i,j \rangle} \delta_{\sigma_i, \sigma_j} \]
+$$ \\ E = -J \sum_{\langle i,j \rangle} \delta_{\sigma_i, \sigma_j} \\ $$ 
 
 Here:
-- \(J\) is the interaction parameter.
-- \(\langle i,j \rangle\) denotes summation over nearest neighbors.
-- \(\delta_{\sigma_i, \sigma_j}\) is the Kronecker delta function, equal to 1 if \(\sigma_i = \sigma_j\) and 0 otherwise.
+- $J$ is the interaction parameter.
+- $\langle i,j \rangle$ denotes summation over nearest neighbors.
+- $\delta_{\sigma_i, \sigma_j}$ is the Kronecker delta function, equal to 1 if $\sigma_i = \sigma_j$ and 0 otherwise.
 
 ### Entropy
 
-The entropy (\(S\)) is introduced to account for the mixing of particles in the solution. Assuming ideal mixing, the entropy is given by the well-known expression:
+The entropy ($S$) is introduced to account for the mixing of particles in the solution. Assuming ideal mixing, the entropy is given by the well-known expression:
 
-\[ S = -k_B \sum_{i} \left[p_i \ln p_i + (1 - p_i) \ln (1 - p_i)\right] \]
+$$ \\ S = -k_B \sum_{i} \left[p_i \ln p_i + (1 - p_i) \ln (1 - p_i)\right] \\ $$ 
 
 Here:
-- \(k_B\) is the Boltzmann constant.
-- \(p_i\) is the probability of finding a particle of type \(i\) at a lattice site.
+- $k_B$ is the Boltzmann constant.
+- $p_i$ is the probability of finding a particle of type $i$ at a lattice site.
 
 ## Thermodynamic Properties
 
 ### Free Energy
 
-The Helmholtz free energy (\(F\)) is derived by combining the energy and entropy terms:
+The Helmholtz free energy ($F$) is derived by combining the energy and entropy terms:
 
-\[ F = E - TS \]
+$$ \\ F = E - TS \\ $$ 
 
 ### Phase Transitions
 
@@ -220,13 +228,13 @@ The Ising model, named after physicist Ernst Ising, stands as a foundational con
 ### Overview
 The two-dimensional Ising model is a simplified representation of a magnetic material where each magnetic moment (spin) interacts only with its nearest neighbors. The system's elements, often representing magnetic moments, are assigned binary spins – typically up or down. These spins interact primarily with their nearest neighbors, influencing each other's orientation. The model's behavior is described by the following simple Hamiltonian:
 
-\[ H = -J \sum_{\langle i,j \rangle} s_i s_j - h \sum_{i} s_i \]
+$$ \\ H = -J \sum_{\langle i,j \rangle} s_i s_j - h \sum_{i} s_i \\ $$ 
 
 Here:
-- \(J\) represents the strength of interactions between spins.
-- \(s_i\) is the spin at site \(i\).
-- \(\langle i,j \rangle\) denotes summation over nearest neighbors.
-- \(h\) is an external magnetic field.
+- $J$ represents the strength of interactions between spins.
+- $s_i$ is the spin at site $i$.
+- $\langle i,j \rangle$ denotes summation over nearest neighbors.
+- $h$ is an external magnetic field.
 
 
 A defining feature of the Ising model is its ability to exhibit phase transitions. In particular, it undergoes a ferromagnetic transition where spins align, leading to the material becoming magnetized. This critical behavior is pivotal for understanding the emergence of macroscopic properties in various physical systems. The Ising model finds widespread applications in physics and material science. It serves as a crucial tool for studying critical phenomena and phase transitions. In material science, the model aids in comprehending magnetic properties in diverse materials, providing a bridge between microscopic interactions and macroscopic behaviors.

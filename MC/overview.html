@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>SIMULATIONS CELLS AND PERIODIC BOUNDARY CONDITIONS &#8212; Statistical Mechanics and Monte-Carlo</title>
+    <title>Monte-Carlo &#8212; Statistical Mechanics and Monte-Carlo</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,11 +52,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="canonical" href="https://github.com/jollactic/SM_and_MC_course/SYSTEMS/overview.html" />
+    <link rel="canonical" href="https://github.com/jollactic/SM_and_MC_course/MC/overview.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lattice models" href="../Lattice/overview.html" />
-    <link rel="prev" title="Introduction" href="../intro.html" />
+    <link rel="next" title="ELECTRONIC STRUCTURE - Density Functional Theory (DFT)" href="../DFT/overview.html" />
+    <link rel="prev" title="Lattice models" href="../Lattice/overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -112,8 +112,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../SYSTEMS/overview.html">
    SIMULATIONS CELLS AND PERIODIC BOUNDARY CONDITIONS
   </a>
  </li>
@@ -122,8 +122,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lattice models
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../MC/overview.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Monte-Carlo
   </a>
  </li>
@@ -259,7 +259,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://jollactic.github.io/SM_and_MC_course/issues/new?title=Issue%20on%20page%20%2FSYSTEMS/overview.html&body=Your%20issue%20content%20here."
+        <a href="https://jollactic.github.io/SM_and_MC_course/issues/new?title=Issue%20on%20page%20%2FMC/overview.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -276,7 +276,7 @@ title="Open an issue"
       </li>
       
       <li>
-        <a href="https://github.com/jollactic.github.io/SM_and_MC_course/edit/main/SYSTEMS/overview.md"
+        <a href="https://github.com/jollactic.github.io/SM_and_MC_course/edit/main/MC/overview.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -304,7 +304,7 @@ title="Edit this page"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/SYSTEMS/overview.md"
+        <a href="../_sources/MC/overview.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -364,15 +364,15 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#periodic-boundary-conditions-pbc">
-   Periodic Boundary Conditions (PBC)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supercells">
-   Supercells
+  <a class="reference internal nav-link" href="#metropolis-monte-carlo-mc">
+   Metropolis Monte-Carlo (MC)
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorial">
+     Tutorial
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#further-reading">
      Further reading:
@@ -389,7 +389,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>SIMULATIONS CELLS AND PERIODIC BOUNDARY CONDITIONS</h1>
+                <h1>Monte-Carlo</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -400,15 +400,15 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#periodic-boundary-conditions-pbc">
-   Periodic Boundary Conditions (PBC)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supercells">
-   Supercells
+  <a class="reference internal nav-link" href="#metropolis-monte-carlo-mc">
+   Metropolis Monte-Carlo (MC)
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorial">
+     Tutorial
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#further-reading">
      Further reading:
@@ -426,38 +426,70 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="simulations-cells-and-periodic-boundary-conditions">
-<h1>SIMULATIONS CELLS AND PERIODIC BOUNDARY CONDITIONS<a class="headerlink" href="#simulations-cells-and-periodic-boundary-conditions" title="Permalink to this headline">#</a></h1>
-<p>In order to use electronic or atomistic simulations techniques we need a way to represent the system we would like to study. In the case of molecules this task is trivial, we simply need to specify the positions of all atoms in the molecule (or nuclei in the case of an electronic simulation). When dealing with a materials with an almost ininite number of atoms this becomes untracktable. Here we make use of simulation cells and periodic boundary conditions.</p>
-<section id="periodic-boundary-conditions-pbc">
-<h2>Periodic Boundary Conditions (PBC)<a class="headerlink" href="#periodic-boundary-conditions-pbc" title="Permalink to this headline">#</a></h2>
-<p>Periodic boundary conditions (PBCs) is a mathematical tool used to simulate an infinite system by using a finite simulation cell. This technique is widely used in many areas of physics and chemistry.</p>
-<p>In PBCs, the edges of the simulation cell are identified with each other, meaning that when a particle exits the simulation cell on one edge, it reenters the cell from the opposite edge as shown in figure below:</p>
-<p><img alt="PBC" src="../_images/PBC.gif" /></p>
-<p>Mathematically, this can be represented by the following equations:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="monte-carlo">
+<h1>Monte-Carlo<a class="headerlink" href="#monte-carlo" title="Permalink to this headline">#</a></h1>
+<section id="metropolis-monte-carlo-mc">
+<h2>Metropolis Monte-Carlo (MC)<a class="headerlink" href="#metropolis-monte-carlo-mc" title="Permalink to this headline">#</a></h2>
+<p>The Metropolis Monte Carlo simulation technique is a powerful computational method used to simulate the thermodynamcs of dissordered systems in condensed matter physics, chemistry, and materials science.</p>
+<p>The Metropolis Monte Carlo simulation technique works by randomly proposing new configurations of the system, and accepting or rejecting them based on their energy difference relative to the current configuration. The probability of accepting a new configuration is determined by the Metropolis criterion, which ensures that the simulation samples the correct thermodynamic ensemble (it complies with the Boltzmann distribution).</p>
+<p>The Metropolis criterion states that the probability of accepting a new configuration with energy difference <span class="math notranslate nohighlight">\(\Delta E\)</span> is given by:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \\
-x_i + L_x &amp;= x_i \\
-y_i + L_y &amp;= y_i \\
-z_i + L_z &amp;= z_i
+P(\Delta E) = min  \{ e^{-\Delta E/k_BT}, 1  \}
 \\
 \end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(x_i\)</span>, <span class="math notranslate nohighlight">\(y_i\)</span>, and <span class="math notranslate nohighlight">\(z_i\)</span> are the coordinates of particle <span class="math notranslate nohighlight">\(i\)</span> in the simulation cell, and <span class="math notranslate nohighlight">\(L_x\)</span>, <span class="math notranslate nohighlight">\(L_y\)</span>, and <span class="math notranslate nohighlight">\(L_z\)</span> are the lengths of the simulation cell in each direction. These equations state that a particle’s position plus the length of the simulation cell in a given direction is equivalent to its position in that direction.</p>
-<p>PBCs are particularly useful when studying systems that exhibit periodicity, such as crystals or periodic arrays of particles. By using PBCs, researchers can simulate a small part of the system and extrapolate its behavior to the entire system. However, PBCs do have limitations, such as the inability to accurately model surface effects and other non-periodic phenomena.</p>
+<p>where <span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant, <span class="math notranslate nohighlight">\(T\)</span> is the temperature, and <span class="math notranslate nohighlight">\(\Delta E\)</span> is the energy difference between the proposed  configuration and the current configuration. This means that, if the propsoed configuration has a lower energy it is always accepted.</p>
+<p>In practice, the Metropolis Monte Carlo simulation technique involves the following steps:</p>
+<ol class="simple">
+<li><p>Choose a starting configuration for the system.</p></li>
+<li><p>Randomly propose a new configuration by moving one or more atoms or molecules in the system.</p></li>
+<li><p>Calculate the energy difference between the proposed configuration and the current configuration.</p></li>
+<li><p>Determine whether to accept or reject the proposed configuration based on the Metropolis criterion.</p></li>
+<li><p>Record/save the current configuration into a data-base. <em>Note that the same configurations can be added twice or more when we reject proposed configurations. This is a key-point of the approach, low energy configuration shall be mre predominant in our data-base.</em></p></li>
+<li><p>Repeat steps 2-4 for a large number <span class="math notranslate nohighlight">\(N\)</span> of iterations , allowing the simulation to explore the configuration space of the system.</p></li>
+</ol>
+<p>From the data-base generated in this procedure, we can calculate thermodynamic properties of the system, such as the heat capacity and free energy. In order to do so we simply take the average of the property calculated using all configurations in our data-base. For example the internal energy, <span class="math notranslate nohighlight">\(&lt;U&gt;\)</span>, can be calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+&lt;U&gt; = \frac{1}{N} \sum_{n}^{N} E_i
+\\
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of configurations in our data-base, and <span class="math notranslate nohighlight">\(E_n\)</span> is the energy of configuration <span class="math notranslate nohighlight">\(n\)</span>. The concept can be generalized to any property that can be computed for the single configurations (so-called mechanical properties).</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\\
+&lt;A&gt; = \frac{1}{N} \sum_{n}^{N} A_n
+\\
+\end{split}\]</div>
+<p><a class="reference external" href="https://chi-feng.github.io/mcmc-demo/app.html?algorithm=RandomWalkMH&amp;target=banana">The concept os this type of sampling is neatly illustrated in this interactive example</a>.</p>
+<section id="tutorial">
+<h3>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">#</a></h3>
+<a target="_blank" href="https://colab.research.google.com/github/jollactic/Modelling_course/blob/main/CE_MC/Tutorial_LMO.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+<div class="warning" style='padding:0.1em; background-color:#E9D8FD; color:#69337A'>
+<span>
+<p style='margin-top:1em; text-align:center'>
+<b>Assignment:</b></p>
+<p style='margin-left:1em;'>
+<p>Use the tutorial to predict the voltage profile (at various levels of approximation) for a cathode material where a spinel structured <span class="math notranslate nohighlight">\(LiMn_2O_4\)</span> consists the intercalation material.</p>
+<p style='margin-top:1em; text-align:center'>
+<b>Submission instructions:</b></p>
+<p style='margin-left:1em;'>
+<p style='margin-left:1em;'>
+Upload your commented version of the note-book to the studium page. 
+</p></span>
+</div>
 </section>
-<section id="supercells">
-<h2>Supercells<a class="headerlink" href="#supercells" title="Permalink to this headline">#</a></h2>
-<p>Supercells are a widely used concept in materials modeling, particularly in computational solid-state physics and chemistry. A supercell is an artificial unit cell that contains multiple copies of the original unit cell, allowing for the simulation of larger systems and more complex structures. The supercell can be constructed by replicating the original unit cell along one or more of its lattice vectors, resulting in a larger cell with a new, larger lattice.</p>
-<p>Suppose we have an original unit cell with lattice vectors <span class="math notranslate nohighlight">\(\mathbf{a}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{a}_2\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{a}_3\)</span>, and let <span class="math notranslate nohighlight">\(n_1\)</span>, <span class="math notranslate nohighlight">\(n_2\)</span>, and <span class="math notranslate nohighlight">\(n_3\)</span> be the number of times the unit cell is replicated along each lattice vector. The resulting supercell will have lattice vectors <span class="math notranslate nohighlight">\(\mathbf{A}_1=n_1\mathbf{a}_1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}_2=n_2\mathbf{a}_2\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{A}_3=n_3\mathbf{a}_3\)</span>, and will contain <span class="math notranslate nohighlight">\(n=n_1n_2n_3\)</span> replicas of the original unit cell.</p>
-<p>Supercells are useful in materials modeling for several reasons. First, they allow for the simulation of larger systems, which can be important for understanding the behavior of materials under different conditions or for predicting the properties of materials that are difficult to synthesize or characterize experimentally. Second, they can be used to model defects or impurities in a crystal lattice, by introducing an additional atom or group of atoms into the supercell. Third, they can be used to study the effects of lattice vibrations or thermal fluctuations on the properties of materials.</p>
 <section id="further-reading">
 <h3>Further reading:<a class="headerlink" href="#further-reading" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
-<li><p><a class="reference external" href="https://python.plainenglish.io/molecular-dynamics-periodic-boundary-conditions-21f957bbb294">PBC at python in plain english</a></p></li>
-<li><p><a class="reference external" href="https://ebookcentral.proquest.com/lib/uu/reader.action?docID=481650">Chapter 2 in <em>Computational Chemistry of Solid State Materials : A Guide for Materials Scientists, Chemists, Physicists and Others</em> Computational Chemistry of Solid State Materials : A Guide for Materials Scientists, Chemists, Physicists and Others</a></p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Periodic_boundary_conditions">Periodic boundary conditions at Wikipedia</a></p></li>
-<li><p><a class="reference external" href="https://ebookcentral.proquest.com/lib/uu/reader.action?docID=307221">Chapter 3.2.2 in <em>Understanding Molecular Simulation : From Algorithms to Applications</em> by Daan Frenkel &amp; Berend Smit</a></p></li>
+<li><p><a class="reference external" href="https://iopscience.iop.org/article/10.1088/1361-648X/ab1bbc">A pedagocially written article on the subject</a></p></li>
+<li><p><a class="reference external" href="http://manuscript.elsevier.com/S1359645416308205/pdf/S1359645416308205.pdf">An extensive DFT based study of the Ag-Pt system</a></p></li>
+<li><p><a class="reference external" href="https://ebookcentral.proquest.com/lib/uu/reader.action?docID=307221">Chapter 3 in <em>Understanding Molecular Simulation : From Algorithms to Applications</em> by Daan Frenkel &amp; Berend Smit</a></p></li>
+<li><p><a class="reference external" href="https://ebookcentral.proquest.com/lib/uu/reader.action?docID=1161544">Chapter 6 in <em>Atomistic Computer Simulations : A Practical Guide</em> by Veronika Brázdová and David R. Bowler</a></p></li>
 </ol>
 </section>
 </section>
@@ -476,7 +508,7 @@ z_i + L_z &amp;= z_i
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./SYSTEMS"
+            path: "./MC"
         },
         predefinedOutput: true
     }
@@ -490,17 +522,17 @@ z_i + L_z &amp;= z_i
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Lattice/overview.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction</p>
+            <p class="prev-next-title">Lattice models</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../Lattice/overview.html" title="next page">
+    <a class='right-next' id="next-link" href="../DFT/overview.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lattice models</p>
+        <p class="prev-next-title">ELECTRONIC STRUCTURE - Density Functional Theory (DFT)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
