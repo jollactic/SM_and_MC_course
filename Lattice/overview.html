@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://github.com/jollactic/SM_and_MC_course/Lattice/overview.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Monte-Carlo" href="../MC/overview.html" />
+    <link rel="next" title="Diffusion limited aggregation" href="../DLA/overview.html" />
     <link rel="prev" title="Simulation cells and periodic boundary conditions" href="../SYSTEMS/overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -120,6 +120,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Lattice models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../DLA/overview.html">
+   Diffusion limited aggregation
   </a>
  </li>
  <li class="toctree-l1">
@@ -400,16 +405,6 @@ title="Print to PDF"
      Bragg-Williams approximation (Mean-field approximation)
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tutorial">
-     Tutorial
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#further-reading">
-     Further reading:
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -468,16 +463,6 @@ title="Print to PDF"
      Bragg-Williams approximation (Mean-field approximation)
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tutorial">
-     Tutorial
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#further-reading">
-     Further reading:
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -505,6 +490,7 @@ title="Print to PDF"
 <section id="ideal-lattice-gas">
 <h2>Ideal Lattice Gas<a class="headerlink" href="#ideal-lattice-gas" title="Permalink to this headline">#</a></h2>
 <p>The ideal lattice gas model is a simplified representation of a gas system in statistical mechanics. It provides a theoretical framework for studying the behavior of non-interacting particles in a lattice structure. This model serves as a fundamental reference for understanding the properties of real gases under certain conditions.</p>
+<p>Partion function and ln(Q)</p>
 <section id="configurational-entropy-of-an-ideal-lattice-gas">
 <h3>Configurational entropy of an ideal lattice gas<a class="headerlink" href="#configurational-entropy-of-an-ideal-lattice-gas" title="Permalink to this headline">#</a></h3>
 <p>Can we find an expression in terms of the fraction of occupied sites?</p>
@@ -522,35 +508,7 @@ title="Print to PDF"
 </section>
 <section id="bragg-williams-approximation-mean-field-approximation">
 <h3>Bragg-Williams approximation (Mean-field approximation)<a class="headerlink" href="#bragg-williams-approximation-mean-field-approximation" title="Permalink to this headline">#</a></h3>
-<p>Can we derive the partion function using Christer Elvingssons notes and compute some thermodynamical quantity that we can later compare to an explicit Monte-Carlo simulation?</p>
-</section>
-<section id="tutorial">
-<h3>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">#</a></h3>
-<a target="_blank" href="https://colab.research.google.com/github/jollactic/Modelling_course/blob/main/CE_MC/Tutorial_LMO.ipynb">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-</a>
-<div class="warning" style='padding:0.1em; background-color:#E9D8FD; color:#69337A'>
-<span>
-<p style='margin-top:1em; text-align:center'>
-<b>Assignment:</b></p>
-<p style='margin-left:1em;'>
-<p>Use the tutorial to predict the voltage profile (at various levels of approximation) for a cathode material where a spinel structured <span class="math notranslate nohighlight">\(LiMn_2O_4\)</span> consists the intercalation material.</p>
-<p style='margin-top:1em; text-align:center'>
-<b>Submission instructions:</b></p>
-<p style='margin-left:1em;'>
-<p style='margin-left:1em;'>
-Upload your commented version of the note-book to the studium page. 
-</p></span>
-</div>
-</section>
-<section id="further-reading">
-<h3>Further reading:<a class="headerlink" href="#further-reading" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
-<li><p><a class="reference external" href="https://iopscience.iop.org/article/10.1088/1361-648X/ab1bbc">A pedagocially written article on the subject</a></p></li>
-<li><p><a class="reference external" href="http://manuscript.elsevier.com/S1359645416308205/pdf/S1359645416308205.pdf">An extensive DFT based study of the Ag-Pt system</a></p></li>
-<li><p><a class="reference external" href="https://ebookcentral.proquest.com/lib/uu/reader.action?docID=307221">Chapter 3 in <em>Understanding Molecular Simulation : From Algorithms to Applications</em> by Daan Frenkel &amp; Berend Smit</a></p></li>
-<li><p><a class="reference external" href="https://ebookcentral.proquest.com/lib/uu/reader.action?docID=1161544">Chapter 6 in <em>Atomistic Computer Simulations : A Practical Guide</em> by Veronika Brázdová and David R. Bowler</a></p></li>
-</ol>
+<p>Can we derive the partion function using Christer Elvingssons notes and compute some thermodynamical quantity that we can later compare to an explicit Monte-Carlo simulation? Can we make a supersimple python tutorial?</p>
 </section>
 </section>
 </section>
@@ -589,10 +547,10 @@ Upload your commented version of the note-book to the studium page.
             <p class="prev-next-title">Simulation cells and periodic boundary conditions</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../MC/overview.html" title="next page">
+    <a class='right-next' id="next-link" href="../DLA/overview.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Monte-Carlo</p>
+        <p class="prev-next-title">Diffusion limited aggregation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
