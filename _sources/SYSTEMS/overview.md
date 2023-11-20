@@ -1,4 +1,4 @@
-# SIMULATIONS CELLS AND PERIODIC BOUNDARY CONDITIONS
+# Simulation cells and periodic boundary conditions
 
 In order to use electronic or atomistic simulations techniques we need a way to represent the system we would like to study. In the case of molecules this task is trivial, we simply need to specify the positions of all atoms in the molecule (or nuclei in the case of an electronic simulation). When dealing with a materials with an almost ininite number of atoms this becomes untracktable. Here we make use of simulation cells and periodic boundary conditions.
 

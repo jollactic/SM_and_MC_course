@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Monte-Carlo" href="../MC/overview.html" />
-    <link rel="prev" title="SIMULATIONS CELLS AND PERIODIC BOUNDARY CONDITIONS" href="../SYSTEMS/overview.html" />
+    <link rel="prev" title="Simulation cells and periodic boundary conditions" href="../SYSTEMS/overview.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -114,7 +114,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../SYSTEMS/overview.html">
-   SIMULATIONS CELLS AND PERIODIC BOUNDARY CONDITIONS
+   Simulation cells and periodic boundary conditions
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -363,194 +363,52 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Lattice models
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lattice">
+   lattice
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lattice">
-     lattice
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ideal-lattice-gas">
+   Ideal Lattice Gas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configurational-entropy-of-an-ideal-lattice-gas">
+     Configurational entropy of an ideal lattice gas
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ideal-lattice-gas">
-     Ideal Lattice Gas
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chemical-potential">
+     Chemical potential
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#introduction">
-       Introduction
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hamiltonian-and-energy">
-       Hamiltonian and Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#partition-function">
-       Partition Function
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#free-energy">
-       Free Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#internal-energy-and-specific-heat">
-       Internal Energy and Specific Heat
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#entropy">
-       Entropy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#particle-density">
-       Particle Density
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ideal-gas-law">
-       Ideal Gas Law
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interacting-lattice-gas-with-nearest-neighbor-interactions">
-     Interacting Lattice Gas with Nearest-Neighbor Interactions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Hamiltonian and Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Partition Function
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Free Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       Internal Energy and Specific Heat
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       Entropy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
-       Particle Density
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lattice-theory-of-solutions">
-   Lattice Theory of Solutions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interacting-lattice-gas-with-nearest-neighbor-interactions">
+   Interacting Lattice Gas with Nearest-Neighbor Interactions
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Introduction
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mixture">
+     Mixture
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lattice-model-formulation">
-     Lattice Model Formulation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       Hamiltonian and Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id9">
-       Entropy
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#thermodynamic-properties">
-     Thermodynamic Properties
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id10">
-       Free Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#phase-transitions">
-       Phase Transitions
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#limitations-and-extensions">
-     Limitations and Extensions
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bragg-williams-approximation-mean-field-approximation">
+     Bragg-Williams approximation (Mean-field approximation)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#applications">
-     Applications
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorial">
+     Tutorial
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conclusion">
-     Conclusion
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#further-reading">
+     Further reading:
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-ising-model">
-     The Ising Model
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#overview">
-       Overview
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#onsagers-connection-to-the-ising-model">
-     Onsager’s Connection to the Ising Model
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-contributions">
-       Key Contributions
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tutorial">
-       Tutorial
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#further-reading">
-       Further reading:
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -573,194 +431,52 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Lattice models
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lattice">
+   lattice
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lattice">
-     lattice
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ideal-lattice-gas">
+   Ideal Lattice Gas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configurational-entropy-of-an-ideal-lattice-gas">
+     Configurational entropy of an ideal lattice gas
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ideal-lattice-gas">
-     Ideal Lattice Gas
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chemical-potential">
+     Chemical potential
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#introduction">
-       Introduction
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hamiltonian-and-energy">
-       Hamiltonian and Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#partition-function">
-       Partition Function
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#free-energy">
-       Free Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#internal-energy-and-specific-heat">
-       Internal Energy and Specific Heat
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#entropy">
-       Entropy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#particle-density">
-       Particle Density
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ideal-gas-law">
-       Ideal Gas Law
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interacting-lattice-gas-with-nearest-neighbor-interactions">
-     Interacting Lattice Gas with Nearest-Neighbor Interactions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       Hamiltonian and Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Partition Function
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       Free Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       Internal Energy and Specific Heat
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id5">
-       Entropy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
-       Particle Density
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lattice-theory-of-solutions">
-   Lattice Theory of Solutions
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interacting-lattice-gas-with-nearest-neighbor-interactions">
+   Interacting Lattice Gas with Nearest-Neighbor Interactions
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id7">
-     Introduction
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mixture">
+     Mixture
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lattice-model-formulation">
-     Lattice Model Formulation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       Hamiltonian and Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id9">
-       Entropy
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#thermodynamic-properties">
-     Thermodynamic Properties
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id10">
-       Free Energy
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#phase-transitions">
-       Phase Transitions
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#limitations-and-extensions">
-     Limitations and Extensions
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bragg-williams-approximation-mean-field-approximation">
+     Bragg-Williams approximation (Mean-field approximation)
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#applications">
-     Applications
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutorial">
+     Tutorial
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conclusion">
-     Conclusion
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#further-reading">
+     Further reading:
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-ising-model">
-     The Ising Model
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#overview">
-       Overview
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#onsagers-connection-to-the-ising-model">
-     Onsager’s Connection to the Ising Model
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#key-contributions">
-       Key Contributions
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tutorial">
-       Tutorial
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#further-reading">
-       Further reading:
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -781,241 +497,32 @@ title="Print to PDF"
 <p>In three dimensions, a lattice can be defined as a regular arrangement of points in three-dimensional space, where each point has identical surroundings and the arrangement repeats itself periodically in all directions. More formally, a lattice in three dimensions can be defined as a set of points of the form <span class="math notranslate nohighlight">\(\vec{r} = n_1\vec{a}_1 + n_2\vec{a}_2 + n_3\vec{a}_3\)</span>, where <span class="math notranslate nohighlight">\(\vec{a}_1\)</span>, <span class="math notranslate nohighlight">\(\vec{a}_2\)</span>, and <span class="math notranslate nohighlight">\(\vec{a}_3\)</span> are three linearly independent vectors called the lattice vectors, and <span class="math notranslate nohighlight">\(n_1\)</span>, <span class="math notranslate nohighlight">\(n_2\)</span>, and <span class="math notranslate nohighlight">\(n_3\)</span> are integers.</p>
 <p>The lattice vectors <span class="math notranslate nohighlight">\(\vec{a}_1\)</span>, <span class="math notranslate nohighlight">\(\vec{a}_2\)</span>, and <span class="math notranslate nohighlight">\(\vec{a}_3\)</span> are chosen such that they form a parallelepiped that contains all the lattice points. This parallelepiped is called the unit cell of the lattice, and it represents the repeating pattern of the lattice.</p>
 <p><img alt="Lattice" src="../_images/lattice.png" /></p>
-<p>The figure illustrates a 2d lattice with the unit cell marker out.</p>
+<p>The figure illustrates a 2d lattice with the unit cell marked out.</p>
 <p>There are many types of lattices in three dimensions, each with different symmetry properties. Some common examples include the simple cubic lattice, the face-centered cubic lattice, and the body-centered cubic lattice. The simple cubic lattice is the most basic type of lattice, where each lattice point is at the corner of a cube. The face-centered cubic lattice has additional lattice points at the center of each face of the cube, while the body-centered cubic lattice has an additional lattice point at the center of the cube.</p>
+<p>IMPORTANT #1: For systems with disorder (e.g gas and liquids) we make use of a “super lattice” contaning a large number of sites. The repeating unit can be threrfore be very large!</p>
+<p>IMPORTANT #2: Neighbors (especially nearest neieghbors = NN ) are important in lattice models. We should explain the concept of periodic boundary conditions here and illustrate this concept in terms of which lattice site are connected (NN).</p>
 </section>
 <section id="ideal-lattice-gas">
 <h2>Ideal Lattice Gas<a class="headerlink" href="#ideal-lattice-gas" title="Permalink to this headline">#</a></h2>
 <p>The ideal lattice gas model is a simplified representation of a gas system in statistical mechanics. It provides a theoretical framework for studying the behavior of non-interacting particles in a lattice structure. This model serves as a fundamental reference for understanding the properties of real gases under certain conditions.</p>
-<section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h3>
-<p>In the ideal lattice gas model, the system is often conceptualized as a lattice, where each lattice site can be occupied by at most one particle. This model assumes non-interacting particles, neglecting any potential interactions between them. The simplicity of the ideal lattice gas makes it a useful starting point for studying the basic principles of statistical mechanics.</p>
+<section id="configurational-entropy-of-an-ideal-lattice-gas">
+<h3>Configurational entropy of an ideal lattice gas<a class="headerlink" href="#configurational-entropy-of-an-ideal-lattice-gas" title="Permalink to this headline">#</a></h3>
+<p>Can we find an expression in terms of the fraction of occupied sites?</p>
 </section>
-<section id="hamiltonian-and-energy">
-<h3>Hamiltonian and Energy<a class="headerlink" href="#hamiltonian-and-energy" title="Permalink to this headline">#</a></h3>
-<p>The Hamiltonian for the ideal lattice gas model is straightforward, capturing the energy associated with placing particles on the lattice sites. It is expressed as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\\
- H = -\epsilon \sum_{i} n_i
-\\
-\end{split}\]</div>
-<p>Here:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> is the energy associated with placing a particle on a lattice site.</p></li>
-<li><p><span class="math notranslate nohighlight">\(n_i\)</span> is a binary variable equal to 1 if a particle occupies site <span class="math notranslate nohighlight">\(i\)</span> and 0 otherwise.</p></li>
-<li><p>The sum is taken over all lattice sites.</p></li>
-</ul>
-</section>
-<section id="partition-function">
-<h3>Partition Function<a class="headerlink" href="#partition-function" title="Permalink to this headline">#</a></h3>
-<p>The partition function <span class="math notranslate nohighlight">\(Z\)</span> for the ideal lattice gas is derived from the Hamiltonian and represents the sum of all possible configurations:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\\
- Z = \sum_{\text{all configurations}} e^{-\beta H} 
-\\
-\end{split}\]</div>
-<p>Here:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\beta = \frac{1}{k_B T}\)</span> is the inverse temperature, where <span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant and <span class="math notranslate nohighlight">\(T\)</span> is the absolute temperature.</p></li>
-</ul>
-</section>
-<section id="free-energy">
-<h3>Free Energy<a class="headerlink" href="#free-energy" title="Permalink to this headline">#</a></h3>
-<p>The Helmholtz free energy (<span class="math notranslate nohighlight">\(F\)</span>) is obtained from the partition function:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ F = -k_B T \ln Z \\ \end{split}\]</div>
-</section>
-<section id="internal-energy-and-specific-heat">
-<h3>Internal Energy and Specific Heat<a class="headerlink" href="#internal-energy-and-specific-heat" title="Permalink to this headline">#</a></h3>
-<p>The internal energy (<span class="math notranslate nohighlight">\(U\)</span>) and specific heat (<span class="math notranslate nohighlight">\(C_V\)</span>) can be derived from the free energy:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ U = -\frac{\partial \ln Z}{\partial \beta} \quad \text{and} \quad C_V = \frac{\partial U}{\partial T} \\ \end{split}\]</div>
-</section>
-<section id="entropy">
-<h3>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">#</a></h3>
-<p>The entropy (<span class="math notranslate nohighlight">\(S\)</span>) is given by:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ S = \frac{\epsilon}{T} \frac{\partial \ln Z}{\partial \epsilon} + k_B \sum_{i} \left[ p_i \ln p_i + (1 - p_i) \ln (1 - p_i) \right] \\ \end{split}\]</div>
-<p>Here:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(p_i\)</span> is the probability of finding a particle at site <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
-</ul>
-</section>
-<section id="particle-density">
-<h3>Particle Density<a class="headerlink" href="#particle-density" title="Permalink to this headline">#</a></h3>
-<p>The particle density (<span class="math notranslate nohighlight">\(n\)</span>) is given by the average number of particles per lattice site:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ n = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \epsilon} \\ \end{split}\]</div>
-</section>
-<section id="ideal-gas-law">
-<h3>Ideal Gas Law<a class="headerlink" href="#ideal-gas-law" title="Permalink to this headline">#</a></h3>
-<p>In the limit of low particle density, the ideal lattice gas model converges to the ideal gas law:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ PV = Nk_B T \\ \end{split}\]</div>
-<p>Here:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(P\)</span> is the pressure.</p></li>
-<li><p><span class="math notranslate nohighlight">\(V\)</span> is the volume.</p></li>
-<li><p><span class="math notranslate nohighlight">\(N\)</span> is the total number of particles.</p></li>
-</ul>
+<section id="chemical-potential">
+<h3>Chemical potential<a class="headerlink" href="#chemical-potential" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 <section id="interacting-lattice-gas-with-nearest-neighbor-interactions">
 <h2>Interacting Lattice Gas with Nearest-Neighbor Interactions<a class="headerlink" href="#interacting-lattice-gas-with-nearest-neighbor-interactions" title="Permalink to this headline">#</a></h2>
 <p>In the context of statistical mechanics, an interacting lattice gas refers to a model where particles on a lattice experience interactions, specifically nearest-neighbor interactions. The energy associated with these interactions is denoted as <span class="math notranslate nohighlight">\(w\)</span>.</p>
-<section id="id1">
-<h3>Hamiltonian and Energy<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p>The Hamiltonian for an interacting lattice gas is extended to include the interaction energy <span class="math notranslate nohighlight">\(w\)</span> between nearest neighbors. It is expressed as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ H = -\epsilon \sum_{i} n_i - w \sum_{\langle i,j \rangle} n_i n_j \\ \end{split}\]</div>
-<p>Here:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> is the energy associated with placing a particle on a lattice site.</p></li>
-<li><p><span class="math notranslate nohighlight">\(n_i\)</span> is a binary variable equal to 1 if a particle occupies site <span class="math notranslate nohighlight">\(i\)</span> and 0 otherwise.</p></li>
-<li><p><span class="math notranslate nohighlight">\(w\)</span> is the interaction energy between nearest neighbors.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\langle i, j \rangle\)</span> denotes summation over nearest neighbors.</p></li>
-</ul>
+<section id="mixture">
+<h3>Mixture<a class="headerlink" href="#mixture" title="Permalink to this headline">#</a></h3>
+<p>A lattice fully populated with two types os species A and B.</p>
 </section>
-<section id="id2">
-<h3>Partition Function<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p>The partition function (<span class="math notranslate nohighlight">\(Z\)</span>) for the interacting lattice gas is derived from the Hamiltonian:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ Z = \sum_{\text{all configurations}} e^{-\beta H} \\ \end{split}\]</div>
-<p>Here:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\beta = \frac{1}{k_B T}\)</span> is the inverse temperature, where <span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant and <span class="math notranslate nohighlight">\(T\)</span> is the absolute temperature.</p></li>
-</ul>
-</section>
-<section id="id3">
-<h3>Free Energy<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
-<p>The Helmholtz free energy (<span class="math notranslate nohighlight">\(F\)</span>) is obtained from the partition function:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ F = -k_B T \ln Z \\ \end{split}\]</div>
-</section>
-<section id="id4">
-<h3>Internal Energy and Specific Heat<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<p>The internal energy (<span class="math notranslate nohighlight">\(U\)</span>) and specific heat (<span class="math notranslate nohighlight">\(C_V\)</span>) can be derived from the free energy:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ U = -\frac{\partial \ln Z}{\partial \beta} \quad \text{and} \quad C_V = \frac{\partial U}{\partial T} \\ \end{split}\]</div>
-</section>
-<section id="id5">
-<h3>Entropy<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
-<p>The entropy (<span class="math notranslate nohighlight">\(S\)</span>) is given by:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ S = \frac{\epsilon}{T} \frac{\partial \ln Z}{\partial \epsilon} + k_B \sum_{i} \left[ p_i \ln p_i + (1 - p_i) \ln (1 - p_i) \right] \\ \end{split}\]</div>
-<p>Here:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(p_i\)</span> is the probability of finding a particle at site <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
-</ul>
-</section>
-<section id="id6">
-<h3>Particle Density<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
-<p>The particle density (<span class="math notranslate nohighlight">\(n\)</span>) is given by the average number of particles per lattice site:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ n = \frac{1}{\beta} \frac{\partial \ln Z}{\partial \epsilon} \\ \end{split}\]</div>
-</section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="lattice-theory-of-solutions">
-<h1>Lattice Theory of Solutions<a class="headerlink" href="#lattice-theory-of-solutions" title="Permalink to this headline">#</a></h1>
-<p>The lattice theory of solutions is a theoretical framework within statistical mechanics that provides a systematic approach to understanding the thermodynamic properties of solutions, particularly in the context of phase transitions and mixing behavior. This theory is particularly useful in describing idealized solutions and predicting their macroscopic properties.</p>
-<section id="id7">
-<h2>Introduction<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
-<p>In the lattice theory of solutions, the system is often represented as a lattice, where each lattice site can be occupied by a molecule or particle. This approach simplifies the complex interactions in a solution, making it a valuable tool for studying the thermodynamics of mixtures.</p>
-</section>
-<section id="lattice-model-formulation">
-<h2>Lattice Model Formulation<a class="headerlink" href="#lattice-model-formulation" title="Permalink to this headline">#</a></h2>
-<section id="id8">
-<h3>Hamiltonian and Energy<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
-<p>The starting point is the formulation of a Hamiltonian that describes the energy of the system based on the interactions between neighboring lattice sites. For a binary solution, the energy of the system (<span class="math notranslate nohighlight">\(E\)</span>) can be expressed as:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ E = -J \sum_{\langle i,j \rangle} \delta_{\sigma_i, \sigma_j} \\ \end{split}\]</div>
-<p>Here:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(J\)</span> is the interaction parameter.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\langle i,j \rangle\)</span> denotes summation over nearest neighbors.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\delta_{\sigma_i, \sigma_j}\)</span> is the Kronecker delta function, equal to 1 if <span class="math notranslate nohighlight">\(\sigma_i = \sigma_j\)</span> and 0 otherwise.</p></li>
-</ul>
-</section>
-<section id="id9">
-<h3>Entropy<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
-<p>The entropy (<span class="math notranslate nohighlight">\(S\)</span>) is introduced to account for the mixing of particles in the solution. Assuming ideal mixing, the entropy is given by the well-known expression:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ S = -k_B \sum_{i} \left[p_i \ln p_i + (1 - p_i) \ln (1 - p_i)\right] \\ \end{split}\]</div>
-<p>Here:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(k_B\)</span> is the Boltzmann constant.</p></li>
-<li><p><span class="math notranslate nohighlight">\(p_i\)</span> is the probability of finding a particle of type <span class="math notranslate nohighlight">\(i\)</span> at a lattice site.</p></li>
-</ul>
-</section>
-</section>
-<section id="thermodynamic-properties">
-<h2>Thermodynamic Properties<a class="headerlink" href="#thermodynamic-properties" title="Permalink to this headline">#</a></h2>
-<section id="id10">
-<h3>Free Energy<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
-<p>The Helmholtz free energy (<span class="math notranslate nohighlight">\(F\)</span>) is derived by combining the energy and entropy terms:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ F = E - TS \\ \end{split}\]</div>
-</section>
-<section id="phase-transitions">
-<h3>Phase Transitions<a class="headerlink" href="#phase-transitions" title="Permalink to this headline">#</a></h3>
-<p>By analyzing the free energy, the lattice theory of solutions predicts phase transitions in the system. For instance, in a binary solution, the model can describe demixing or phase separation as a function of temperature and composition.</p>
-</section>
-</section>
-<section id="limitations-and-extensions">
-<h2>Limitations and Extensions<a class="headerlink" href="#limitations-and-extensions" title="Permalink to this headline">#</a></h2>
-<p>While the lattice theory of solutions provides valuable insights into the thermodynamics of idealized solutions, it has limitations in capturing real-world complexities, such as non-ideal mixing and interactions. Extensions, including mean-field theories and more sophisticated models, aim to address these limitations for a more accurate description of complex solutions.</p>
-</section>
-<section id="applications">
-<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">#</a></h2>
-<p>The lattice theory of solutions finds applications in various fields, including chemistry, physics, and materials science. It is particularly useful for predicting phase diagrams, studying phase transitions, and gaining a fundamental understanding of the thermodynamic behavior of solutions.</p>
-</section>
-<section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
-<p>The lattice theory of solutions offers a structured and mathematical approach to study the thermodynamics of solutions, providing a foundation for understanding phase transitions and mixing behavior. While it serves as a valuable theoretical tool for idealized scenarios, researchers often combine this approach with experimental data and more advanced theoretical models to capture the complexities of real-world solutions.</p>
-</section>
-<section id="the-ising-model">
-<h2>The Ising Model<a class="headerlink" href="#the-ising-model" title="Permalink to this headline">#</a></h2>
-<p>The Ising model, named after physicist Ernst Ising, stands as a foundational concept in statistical mechanics, offering valuable insights into phase transitions and magnetic properties in materials. This mathematical model simplifies the intricate interactions within a system, making it particularly applicable in the exploration of ferromagnetism.</p>
-<section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h3>
-<p>The two-dimensional Ising model is a simplified representation of a magnetic material where each magnetic moment (spin) interacts only with its nearest neighbors. The system’s elements, often representing magnetic moments, are assigned binary spins – typically up or down. These spins interact primarily with their nearest neighbors, influencing each other’s orientation. The model’s behavior is described by the following simple Hamiltonian:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} \\ H = -J \sum_{\langle i,j \rangle} s_i s_j - h \sum_{i} s_i \\ \end{split}\]</div>
-<p>Here:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(J\)</span> represents the strength of interactions between spins.</p></li>
-<li><p><span class="math notranslate nohighlight">\(s_i\)</span> is the spin at site <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\langle i,j \rangle\)</span> denotes summation over nearest neighbors.</p></li>
-<li><p><span class="math notranslate nohighlight">\(h\)</span> is an external magnetic field.</p></li>
-</ul>
-<p>A defining feature of the Ising model is its ability to exhibit phase transitions. In particular, it undergoes a ferromagnetic transition where spins align, leading to the material becoming magnetized. This critical behavior is pivotal for understanding the emergence of macroscopic properties in various physical systems. The Ising model finds widespread applications in physics and material science. It serves as a crucial tool for studying critical phenomena and phase transitions. In material science, the model aids in comprehending magnetic properties in diverse materials, providing a bridge between microscopic interactions and macroscopic behaviors.</p>
-</section>
-</section>
-<section id="onsagers-connection-to-the-ising-model">
-<h2>Onsager’s Connection to the Ising Model<a class="headerlink" href="#onsagers-connection-to-the-ising-model" title="Permalink to this headline">#</a></h2>
-<p>Lars Onsager, a distinguished theoretical physicist, made a groundbreaking contribution to statistical mechanics by providing an exact solution for the two-dimensional Ising model in 1944. Onsager’s solution was a significant breakthrough, as solving the Ising model exactly had proven to be a formidable mathematical challenge.</p>
-<section id="key-contributions">
-<h3>Key Contributions<a class="headerlink" href="#key-contributions" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
-<li><p><strong>Partition Function:</strong></p>
-<ul class="simple">
-<li><p>Onsager derived a closed-form expression for the partition function of the two-dimensional Ising model, encapsulating the statistical properties of the system.</p></li>
-</ul>
-</li>
-<li><p><strong>Critical Temperature:</strong></p>
-<ul class="simple">
-<li><p>Determined the critical temperature for the phase transition in the two-dimensional Ising model, where the material undergoes a transition from a disordered to an ordered state, exhibiting spontaneous magnetization.</p></li>
-</ul>
-</li>
-<li><p><strong>Magnetization Profile:</strong></p>
-<ul class="simple">
-<li><p>Provided insights into the behavior of magnetization as a function of temperature, shedding light on the nature of the phase transition.</p></li>
-</ul>
-</li>
-</ol>
+<section id="bragg-williams-approximation-mean-field-approximation">
+<h3>Bragg-Williams approximation (Mean-field approximation)<a class="headerlink" href="#bragg-williams-approximation-mean-field-approximation" title="Permalink to this headline">#</a></h3>
+<p>Can we derive the partion function using Christer Elvingssons notes and compute some thermodynamical quantity that we can later compare to an explicit Monte-Carlo simulation?</p>
 </section>
 <section id="tutorial">
 <h3>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">#</a></h3>
@@ -1079,7 +586,7 @@ Upload your commented version of the note-book to the studium page.
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">SIMULATIONS CELLS AND PERIODIC BOUNDARY CONDITIONS</p>
+            <p class="prev-next-title">Simulation cells and periodic boundary conditions</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../MC/overview.html" title="next page">
