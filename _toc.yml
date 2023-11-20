@@ -1,0 +1,15 @@
+format: jb-book
+root: intro
+chapters:
+- file: SYSTEMS/overview
+- file: Lattice/overview
+- file: DLA/overview
+- file: MC/overview
+- file: DFT/overview
+- file: PythonBasics/Readme
+  sections: 
+  - file: PythonBasics/python-basics_1.ipynb
+  - file: PythonBasics/numpy.ipynb
+  - file: PythonBasics/numpy-matrix-linalg.ipynb
+  - file: PythonBasics/matplotlib.ipynb
+  - file: PythonBasics/python-errors.ipynb 
