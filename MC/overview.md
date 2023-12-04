@@ -140,6 +140,13 @@ $$
 </p></span>
 </div>
 
+### Random numbers
+
+<a target="_blank" href="https://colab.research.google.com/github/jollactic/SM_and_MC_course/blob/main/MC/Random_numbers.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+
 ### Further reading:
 
 1. [A pedagocially written article on the subject](https://iopscience.iop.org/article/10.1088/1361-648X/ab1bbc)
